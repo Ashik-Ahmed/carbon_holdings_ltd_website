@@ -4,6 +4,7 @@ import { useState, useCallback } from 'react'
 import Link from 'next/link'
 import { Droplet, Home, Info, Phone, Menu, X } from 'lucide-react'
 import { Notebook } from 'lucide-react'
+import Image from 'next/image'
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -17,13 +18,15 @@ const Header = () => {
     }, [])
     console.log(Notebook);
     return (
-        <header className="bg-gradient-to-r from-blue-600 to-green-400 text-white sticky top-0">
-            <nav className="container mx-auto px-6 py-3">
+        <header className="bg-gradient-to-r from-blue-600 to-green-400 text-white sticky top-0 z-50">
+            <nav className="container mx-auto px-6 py-1">
                 <div className="flex items-center justify-between">
-                    <div className="text-2xl font-bold transition-transform duration-200 ease-in-out hover:scale-105">
+                    <div className="transition-transform duration-200 ease-in-out hover:scale-105">
                         <Link href="/" className="flex items-center">
-                            <Droplet className="mr-2" />
-                            Carbon Holdings Ltd
+                            {/* <Droplet className="mr-2" />
+                            Carbon Holdings Ltd */}
+                            {/* <Image src="/logo.png" alt="Logo" width={250} height={32} /> */}
+                            <img src="/logo.png" alt="logo" width={300} height={20} />
                         </Link>
                     </div>
                     <div className="md:hidden">
