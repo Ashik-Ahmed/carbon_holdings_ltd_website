@@ -22,8 +22,11 @@ export default function About() {
 }
 
 const Hero = () => (
-    <section className="bg-gradient-to-r from-blue-600 to-green-400 text-white py-20">
-        <div className="container mx-auto px-6 text-center">
+    <section className="relative  text-white py-40" style={{
+        backgroundImage: 'url(/about-us-cover.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', objectFit: 'fill'
+    }}>
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="relative container mx-auto px-6 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fadeInDown">
                 About Carbon Holdings Ltd
             </h1>

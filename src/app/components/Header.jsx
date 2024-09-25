@@ -18,7 +18,7 @@ const Header = () => {
     }, [])
     console.log(Notebook);
     return (
-        <header className="bg-gradient-to-r from-blue-600 to-green-400 text-white sticky top-0 z-50">
+        <header className="bg-green-400 text-white sticky top-0 z-50">
             <nav className="container mx-auto px-6 py-1">
                 <div className="flex items-center justify-between">
                     <div className="transition-transform duration-200 ease-in-out hover:scale-105">
@@ -43,7 +43,7 @@ const Header = () => {
             ${isMenuOpen ? 'block absolute right-1 top-8 mt-2 bg-blue-600 rounded-lg shadow-lg' : 'hidden'}
             md:relative md:bg-transparent md:shadow-none
           `}>
-                        <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 p-4 md:p-0">
+                        <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 text-black p-4 md:p-0">
                             <NavItem href="/" icon={<Home size={18} />} onClick={closeMenu}>
                                 Home
                             </NavItem>
