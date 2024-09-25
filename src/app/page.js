@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Droplet, Zap, Truck } from 'lucide-react'
+import Slider from 'react-slick'
 
 export default function Home() {
   return (
@@ -13,35 +14,76 @@ export default function Home() {
   )
 }
 
-const Hero = () => (
-  <section className="bg-gradient-to-r from-blue-600 to-green-400 text-white py-20">
-    <div className="container mx-auto px-6 text-center">
-      <motion.h1
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.2 }}
-        className="text-4xl md:text-6xl font-bold mb-4"
-      >
-        Powering Progress
-      </motion.h1>
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, delay: 0.4 }}
-        className="text-xl md:text-2xl mb-8"
-      >
-        Innovative energy solutions for a sustainable future
-      </motion.p>
-      <motion.button
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-        className="bg-white text-blue-600 font-bold py-2 px-4 rounded-full hover:bg-gray-100 transition-colors duration-200"
-      >
-        Learn More
-      </motion.button>
-    </div>
-  </section>
-)
+// const Hero = () => (
+//   <section className="bg-gradient-to-r from-blue-600 to-green-400 text-white py-20">
+//     <div className="container mx-auto px-6 text-center">
+//       <motion.h1
+//         initial={{ opacity: 0, y: -20 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.5, delay: 0.2 }}
+//         className="text-4xl md:text-6xl font-bold mb-4"
+//       >
+//         Powering Progress
+//       </motion.h1>
+//       <motion.p
+//         initial={{ opacity: 0, y: 20 }}
+//         animate={{ opacity: 1, y: 0 }}
+//         transition={{ duration: 0.5, delay: 0.4 }}
+//         className="text-xl md:text-2xl mb-8"
+//       >
+//         Innovative energy solutions for a sustainable future
+//       </motion.p>
+//       <motion.button
+//         whileHover={{ scale: 1.05 }}
+//         whileTap={{ scale: 0.95 }}
+//         className="bg-white text-blue-600 font-bold py-2 px-4 rounded-full hover:bg-gray-100 transition-colors duration-200"
+//       >
+//         Learn More
+//       </motion.button>
+//     </div>
+//   </section>
+// )
+
+
+const Hero = () => {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2000,
+    arrows: false,
+  }
+
+  return (
+    <section className="relative h-screen w-full overflow-hidden">
+      <div className="absolute inset-0 z-10 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white px-4">
+        <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fadeInDown text-center">
+          Powering Progress
+        </h1>
+        <p className="text-xl md:text-2xl mb-8 animate-fadeInUp text-center">
+          Innovative energy solutions for a sustainable future
+        </p>
+        <button className="bg-white text-blue-600 font-bold py-2 px-4 rounded-full hover:bg-gray-100 transition-colors duration-200 animate-fadeIn">
+          Learn More
+        </button>
+      </div>
+      <Slider {...settings} className="h-full">
+        <div className="relative h-screen w-full">
+          <img src="/about-us-cover.jpg" alt="Carbon Holdings Facility" className="w-full h-full object-cover" />
+        </div>
+        <div className="relative h-screen w-full">
+          <img src="/about-us-cover.jpg" alt="Motor Spirit Production" className="w-full h-full object-cover" />
+        </div>
+        <div className="relative h-screen w-full">
+          <img src="/about-us-cover.jpg" alt="Sustainable Energy" className="w-full h-full object-cover" />
+        </div>
+      </Slider>
+    </section>
+  )
+}
 
 const Products = () => (
   <section className="py-20 bg-gray-100">

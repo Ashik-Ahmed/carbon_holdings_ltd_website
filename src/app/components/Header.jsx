@@ -16,7 +16,7 @@ const Header = () => {
     const closeMenu = useCallback(() => {
         setIsMenuOpen(false)
     }, [])
-    console.log(Notebook);
+
     return (
         <header className="bg-green-400 text-white sticky top-0 z-50">
             <nav className="container mx-auto px-6 py-1">
