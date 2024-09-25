@@ -47,6 +47,9 @@ const Header = () => {
                             <NavItem href="/" icon={<Home size={18} />} onClick={closeMenu}>
                                 Home
                             </NavItem>
+                            <NavItem href="/machineries" icon={<Home size={18} />} onClick={closeMenu}>
+                                Machineries
+                            </NavItem>
                             <NavItem href="/about" icon={<Info size={18} />} onClick={closeMenu}>
                                 About
                             </NavItem>
