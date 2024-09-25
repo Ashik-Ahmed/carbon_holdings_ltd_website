@@ -4,8 +4,8 @@ import { Facebook, Twitter, Linkedin } from 'lucide-react'
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 text-white py-8">
-            <div className="container mx-auto px-6">
+        <footer className="bg-gray-800 text-white">
+            <div className="container mx-auto px-6 py-8">
                 <div className="flex flex-wrap justify-between items-center">
                     <div className="w-full md:w-1/3 text-center md:text-left">
                         <h3 className="text-lg font-semibold mb-2">Carbon Holdings Ltd</h3>
@@ -20,6 +20,9 @@ const Footer = () => {
                         <SocialIcon icon={<Linkedin size={20} />} href="#" />
                     </div>
                 </div>
+            </div>
+            <div className='w-full'>
+                <p className='text-center text-sm font-light'>Developed by Ashik Ahmed</p>
             </div>
         </footer>
     )

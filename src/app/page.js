@@ -60,15 +60,28 @@ const Hero = () => {
   return (
     <section className="relative h-screen w-full overflow-hidden">
       <div className="absolute inset-0 z-10 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white px-4">
-        <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fadeInDown text-center">
+        <motion.h1
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="text-4xl md:text-6xl font-bold mb-4 animate-fadeInDown text-center">
           Powering Progress
-        </h1>
-        <p className="text-xl md:text-2xl mb-8 animate-fadeInUp text-center">
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4 }}
+          className="text-xl md:text-2xl mb-8"
+        >
           Innovative energy solutions for a sustainable future
-        </p>
-        <button className="bg-white text-blue-600 font-bold py-2 px-4 rounded-full hover:bg-gray-100 transition-colors duration-200 animate-fadeIn">
+        </motion.p>
+        <motion.button
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.6 }}
+          className="bg-white text-blue-600 font-bold py-2 px-4 rounded-full hover:bg-gray-100 transition-colors duration-200 animate-fadeIn">
           Learn More
-        </button>
+        </motion.button>
       </div>
       <Slider {...settings} className="h-full">
         <div className="relative h-screen w-full">
@@ -81,7 +94,7 @@ const Hero = () => {
           <img src="/about-us-cover.jpg" alt="Sustainable Energy" className="w-full h-full object-cover" />
         </div>
       </Slider>
-    </section>
+    </section >
   )
 }
 
