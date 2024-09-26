@@ -31,7 +31,7 @@ const Hero = () => (
                 About Carbon Holdings Ltd
             </h1>
             <p className="text-xl md:text-2xl mb-8 animate-fadeInUp">
-                Powering Bangladesh's energy future since 2016
+                Powering Bangladesh&apos;s energy future since 2016
             </p>
         </div>
     </section>
@@ -56,7 +56,7 @@ const CompanyOverview = () => (
                         Carbon Holdings Ltd., established in April 2016, is a privately owned midstream and downstream petrochemical process industrial plant company. With a focus on refining natural gas condensate, our fractionation plant in Manikganj is designed to produce 100 metric tonnes of finished products daily.
                     </p>
                     <p className="text-gray-600 mb-4 animate-fadeInRight">
-                        Our primary objective is to address the growing demand for Motor Spirit (MS), Mineral Turpentine (MTT), and High-Speed Diesel (HSD) in Bangladesh. By producing these essential fuels, we aim to significantly reduce the country's reliance on imported fuels and contribute to energy security.
+                        Our primary objective is to address the growing demand for Motor Spirit (MS), Mineral Turpentine (MTT), and High-Speed Diesel (HSD) in Bangladesh. By producing these essential fuels, we aim to significantly reduce the country&apos;s reliance on imported fuels and contribute to energy security.
                     </p>
                 </div>
             </div>
@@ -95,7 +95,7 @@ const ProductionDetails = () => (
 )
 
 const ProductCard = ({ icon, title, description }) => (
-    <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-200 transform hover:scale-105">
+    <div className="p-6 border border-gray-200 rounded-lg hover:border-blue-500 transition-all duration-300 transform hover:scale-105">
         <div className="text-blue-600 mb-4">{icon}</div>
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
         <p className="text-gray-600">{description}</p>
@@ -119,13 +119,13 @@ const StrategicPartnership = () => (
                         Collaboration for Energy Security
                     </h3>
                     <p className="text-gray-600 mb-4 animate-fadeInRight">
-                        Our operations are centered around a strategic partnership with Petrobangla and BPC. We receive natural gas condensate, process it into valuable products, and deliver the finished goods to BPC's marketing company. This collaboration plays a crucial role in ensuring a stable and reliable supply of fuels within Bangladesh.
+                        Our operations are centered around a strategic partnership with Petrobangla and BPC. We receive natural gas condensate, process it into valuable products, and deliver the finished goods to BPC&apos;s marketing company. This collaboration plays a crucial role in ensuring a stable and reliable supply of fuels within Bangladesh.
                     </p>
                     <h3 className="text-2xl font-bold mb-4 animate-fadeInRight">
                         Expanding Our Capabilities
                     </h3>
                     <p className="text-gray-600 mb-4 animate-fadeInRight">
-                        To enhance our operational capabilities and workforce, Carbon Holdings Ltd. has recently secured import permissions. This expansion will allow us to further contribute to Bangladesh's energy sector and meet the evolving needs of the country.
+                        To enhance our operational capabilities and workforce, Carbon Holdings Ltd. has recently secured import permissions. This expansion will allow us to further contribute to Bangladesh&apos;s energy sector and meet the evolving needs of the country.
                     </p>
                 </div>
             </div>
@@ -140,7 +140,7 @@ const FutureGrowth = () => (
             <span className="font-semibold">Continuous Improvement and Growth</span>
         </div> */}
         <p className="text-gray-600 animate-fadeInRight">
-            At Carbon Holdings Ltd., we are committed to continuous improvement and sustainable growth. Our focus on innovation, efficiency, and environmental responsibility drives us to constantly refine our processes and explore new opportunities. We aim to play a pivotal role in Bangladesh's energy future by:
+            At Carbon Holdings Ltd., we are committed to continuous improvement and sustainable growth. Our focus on innovation, efficiency, and environmental responsibility drives us to constantly refine our processes and explore new opportunities. We aim to play a pivotal role in Bangladesh&apos;s energy future by:
         </p>
         <ul className="list-disc list-inside text-gray-600 mt-2 space-y-2 animate-fadeInRight">
             <li>Investing in cutting-edge technology to improve production efficiency</li>

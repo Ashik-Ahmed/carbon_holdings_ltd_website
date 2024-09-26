@@ -27,7 +27,7 @@ const Hero = () => (
                 At A Glance
             </h1>
             <p className="text-xl md:text-2xl mb-8 animate-fadeInUp">
-                Learn about Carbon Holdings Ltd, our history, operations, and commitment to addressing Bangladesh's energy needs.
+                Learn about Carbon Holdings Ltd, our history, operations, and commitment to addressing Bangladesh&apos;s energy needs.
             </p>
         </div>
     </section>
@@ -53,7 +53,7 @@ const KeyInformation = () => (
 )
 
 const InfoCard = ({ icon, title, description }) => (
-    <div className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-200 transform hover:scale-105">
+    <div className="p-6 bg-white border border-gray-200 rounded-lg hover:border-blue-500 transition-all duration-300 transform hover:scale-105">
         <div className="text-blue-600 mb-4">{icon}</div>
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
         <p className="text-gray-600">{description}</p>
@@ -78,15 +78,15 @@ const Timeline = () => (
 )
 
 const TimelineItem = ({ year, event, side }) => (
-    <div className={`flex ${side === 'left' ? 'flex-row-reverse' : ''} items-center justify-between w-full mb-8`}>
+    <div className={`flex ${side === 'left' ? 'flex-row-reverse' : ''}  items-center justify-between w-full mb-8`}>
         <div className="w-5/12"></div>
         <div className="z-20">
-            <div className="bg-blue-600 rounded-full w-8 h-8 flex items-center justify-center">
+            <div className="bg-blue-600 rounded-full w-8 h-8 flex items-center justify-center ">
                 <Calendar size={20} className="text-white" />
             </div>
         </div>
-        <div className="w-5/12">
-            <div className={`bg-white p-4 rounded shadow ${side === 'left' ? 'text-right' : ''}`}>
+        <div className="w-5/12 hover:border-blue-500 transition-all duration-300 transform hover:scale-105">
+            <div className={`bg-white p-4 rounded shadow ${side === 'left' ? 'text-right' : ''} `}>
                 <h3 className="font-bold text-lg mb-1">{year}</h3>
                 <p className="text-gray-700">{event}</p>
             </div>

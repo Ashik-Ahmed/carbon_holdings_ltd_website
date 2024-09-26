@@ -76,10 +76,10 @@ const MachineItem = ({ title, image, details, index }) => {
         >
             <motion.h3
                 variants={contentVariants}
-                className="relative w-fit text-2xl font-bold text-gray-600 p-6 text-center border-b-2 border-green-400 hover:shadow-md hover:shadow-green-500 rounded-full transition-all duration-300 group z-10"
+                className="relative w-fit text-2xl font-bold text-gray-600 p-6 text-center border-b-2 border-blue-400 hover:text-white hover:shadow-md hover:shadow-blue-500 rounded-full transition-all duration-300 group z-10"
             >
                 {/* {title} */}
-                <span className="absolute inset-0 rounded-full bg-green-200 left-0 w-full h-full transition-all duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100 origin-left z-0"></span>
+                <span className="absolute inset-0 rounded-full bg-sky-300 left-0 w-full h-full transition-all duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100 origin-left z-0"></span>
                 <span className="relative z-10">{title}</span>
             </motion.h3>
             <div className={`flex flex-col md:flex-row my-4 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>

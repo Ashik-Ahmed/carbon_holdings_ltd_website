@@ -104,7 +104,7 @@ const Hero = () => {
 const Products = () => (
   <section className="py-20 bg-gray-100">
     <div className="container mx-auto px-6">
-      <h2 className="text-3xl font-bold text-center mb-8">Our Products</h2>
+      <h2 className="text-3xl font-bold text-center mb-8 border-b-2 border-blue-500 w-fit mx-auto">Our Products</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <ProductCard
           icon={<Droplet size={40} />}
@@ -203,7 +203,7 @@ const StatItem = ({ number, label }) => (
 const Features = () => (
   <section className="py-20">
     <div className="container mx-auto px-6">
-      <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
+      <h2 className="text-3xl font-bold text-center mb-12 border-b-2 border-blue-500 w-fit mx-auto">Why Choose Us</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <FeatureCard
           icon={<BarChart size={40} />}
@@ -236,7 +236,7 @@ const FeatureCard = ({ icon, title, description }) => (
 const Testimonials = () => (
   <section className="py-20 bg-gray-100">
     <div className="container mx-auto px-6">
-      <h2 className="text-3xl font-bold text-center mb-12">What Our Partners Say</h2>
+      <h2 className="text-3xl font-bold text-center mb-12 border-b-2 border-blue-500 w-fit mx-auto">What Our Partners Say</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <TestimonialCard
           quote="Carbon Holdings Ltd has been an invaluable partner in our energy initiatives. Their commitment to quality and innovation is unparalleled."
