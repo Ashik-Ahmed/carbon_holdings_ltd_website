@@ -22,7 +22,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='w-full'>
-                <p className='text-center text-sm font-light'>Developed by Ashik Ahmed</p>
+                <p className='text-center text-sm font-light'>Developed by <a href="https://lamdatelecombd.com/" target="_blank" className='text-blue-500'>Lamda Telecom</a></p>
             </div>
         </footer>
     )

@@ -43,7 +43,7 @@ const CompanyOverview = () => (
             <div className="flex flex-wrap items-center">
                 <div className="w-full md:w-1/2 mb-8 md:mb-0">
                     <img
-                        src="/placeholder.svg?height=400&width=600"
+                        src="/site_pic3.jpg"
                         alt="Carbon Holdings Ltd Facility in Manikganj"
                         className="rounded-lg shadow-lg animate-fadeInLeft"
                     />
@@ -65,7 +65,7 @@ const CompanyOverview = () => (
 )
 
 const ProductionDetails = () => (
-    <section className="py-20 bg-gray-100">
+    <section className="py-20 bg-blue-600 text-white">
         <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-12">Our Production</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -86,7 +86,7 @@ const ProductionDetails = () => (
                 />
             </div>
             <div className="mt-12 text-center">
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-200 mb-4">
                     As per agreements, a portion of the produced MS and HSD is supplied to the Bangladesh Petroleum Corporation (BPC). However, non-fuel products like MTT can be openly distributed in the local market, providing a valuable resource for various industries.
                 </p>
             </div>
@@ -95,10 +95,10 @@ const ProductionDetails = () => (
 )
 
 const ProductCard = ({ icon, title, description }) => (
-    <div className="p-6 border border-gray-200 rounded-lg hover:border-blue-500 transition-all duration-300 transform hover:scale-105">
-        <div className="text-blue-600 mb-4">{icon}</div>
-        <h3 className="text-xl font-semibold mb-2">{title}</h3>
-        <p className="text-gray-600">{description}</p>
+    <div className="p-4 rounded-lg bg-blue-700 hover:bg-blue-800  transition-colors duration-300">
+        <div className="text-white mb-4">{icon}</div>
+        <h3 className="text-xl font-semibold mb-2  text-white">{title}</h3>
+        <p className="text-gray-200 ">{description}</p>
     </div>
 )
 
@@ -109,7 +109,7 @@ const StrategicPartnership = () => (
             <div className="flex flex-wrap items-center">
                 <div className="w-full md:w-1/2 mb-8 md:mb-0">
                     <img
-                        src="/placeholder.svg?height=400&width=600"
+                        src="/site_pic2.jpg"
                         alt="Carbon Holdings Ltd Strategic Partnership"
                         className="rounded-lg shadow-lg animate-fadeInLeft"
                     />

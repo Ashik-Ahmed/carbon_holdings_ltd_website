@@ -88,10 +88,13 @@ const Hero = () => {
       </div>
       <Slider {...settings} className="h-full">
         <div className="relative h-screen w-full">
-          <img src="/about-us-cover.jpg" alt="Carbon Holdings Facility" className="w-full h-full object-cover" />
+          <img src="/machineries-cover.jpg" alt="Carbon Holdings Facility" className="w-full h-full object-cover" />
         </div>
         <div className="relative h-screen w-full">
-          <img src="/about-us-cover.jpg" alt="Motor Spirit Production" className="w-full h-full object-cover" />
+          <img src="/site_pic3.jpg" alt="Motor Spirit Production" className="w-full h-full object-cover" />
+        </div>
+        <div className="relative h-screen w-full">
+          <img src="/site_pic4.jpg" alt="Sustainable Energy" className="w-full h-full object-cover" />
         </div>
         <div className="relative h-screen w-full">
           <img src="/about-us-cover.jpg" alt="Sustainable Energy" className="w-full h-full object-cover" />
@@ -255,7 +258,7 @@ const Testimonials = () => (
 
 const TestimonialCard = ({ quote, author, position }) => (
   <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
-    <p className="text-gray-600 italic mb-4">"{quote}"</p>
+    <p className="text-gray-600 italic mb-4">&quot;{quote}&quot;</p>
     <div className="font-semibold">{author}</div>
     <div className="text-sm text-gray-500">{position}</div>
   </div>
