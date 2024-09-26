@@ -38,12 +38,12 @@ const Header = () => {
                             className="text-white focus:outline-none focus:text-gray-300 z-20 relative"
                             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                         >
-                            {isMenuOpen ? <X size={24} className='text-white' /> : <Menu size={24} className='text-white' />}
+                            {isMenuOpen ? <X size={24} className='text-black' /> : <Menu size={24} className='text-black' />}
                         </button>
                     </div>
                     <div className={`
             md:flex md:items-center md:space-x-4
-            ${isMenuOpen ? 'block absolute right-1 top-8 mt-2 bg-blue-600 rounded-lg shadow-lg' : 'hidden'}
+            ${isMenuOpen ? 'block absolute right-1 top-8 p-2 mt-2 bg-white rounded-lg shadow-lg' : 'hidden'}
             md:relative md:bg-transparent md:shadow-none
           `}>
                         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 text-black md:p-0">
