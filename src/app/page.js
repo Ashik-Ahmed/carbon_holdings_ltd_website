@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from 'framer-motion'
-import { Droplet, Zap, Truck } from 'lucide-react'
+import { Droplet, Zap, Truck, BarChart, Globe, Award } from 'lucide-react'
 import Slider from 'react-slick'
 
 export default function Home() {
@@ -9,7 +9,10 @@ export default function Home() {
     <div className="min-h-screen">
       <Hero />
       <Products />
-      <About />
+      {/* <About /> */}
+      <Stats />
+      <Features />
+      <Testimonials />
     </div>
   )
 }
@@ -124,14 +127,13 @@ const Products = () => (
 )
 
 const ProductCard = ({ icon, title, description }) => (
-  <motion.div
-    whileHover={{ scale: 1.05 }}
-    className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-200"
+  <div
+    className="p-6 border border-gray-200 rounded-lg hover:border-blue-500 transition-all duration-300 transform hover:scale-105"
   >
     <div className="text-blue-600 mb-4">{icon}</div>
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p className="text-gray-600">{description}</p>
-  </motion.div>
+  </div>
 )
 
 const About = () => (
@@ -176,4 +178,85 @@ const About = () => (
       </div>
     </div>
   </section>
+)
+
+
+const Stats = () => (
+  <section className="py-20 bg-blue-600 text-white">
+    <div className="container mx-auto px-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <StatItem number="100+" label="Metric Tons Daily Production" />
+        <StatItem number="72%" label="Motor Spirit Production" />
+        <StatItem number="5+" label="Years of Excellence" />
+      </div>
+    </div>
+  </section>
+)
+
+const StatItem = ({ number, label }) => (
+  <div className="p-4 rounded-lg bg-blue-700 hover:bg-blue-800 transition-colors duration-300">
+    <h3 className="text-4xl font-bold mb-2">{number}</h3>
+    <p className="text-xl">{label}</p>
+  </div>
+)
+
+const Features = () => (
+  <section className="py-20">
+    <div className="container mx-auto px-6">
+      <h2 className="text-3xl font-bold text-center mb-12">Why Choose Us</h2>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <FeatureCard
+          icon={<BarChart size={40} />}
+          title="Industry Leadership"
+          description="Leading the way in petrochemical processing and innovation"
+        />
+        <FeatureCard
+          icon={<Globe size={40} />}
+          title="Sustainable Practices"
+          description="Committed to environmentally responsible operations"
+        />
+        <FeatureCard
+          icon={<Award size={40} />}
+          title="Quality Assurance"
+          description="Rigorous standards ensuring top-tier product quality"
+        />
+      </div>
+    </div>
+  </section>
+)
+
+const FeatureCard = ({ icon, title, description }) => (
+  <div className="p-6 border border-gray-200 rounded-lg hover:border-blue-500 transition-all duration-300 transform hover:scale-105">
+    <div className="text-blue-600 mb-4">{icon}</div>
+    <h3 className="text-xl font-semibold mb-2">{title}</h3>
+    <p className="text-gray-600">{description}</p>
+  </div>
+)
+
+const Testimonials = () => (
+  <section className="py-20 bg-gray-100">
+    <div className="container mx-auto px-6">
+      <h2 className="text-3xl font-bold text-center mb-12">What Our Partners Say</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <TestimonialCard
+          quote="Carbon Holdings Ltd has been an invaluable partner in our energy initiatives. Their commitment to quality and innovation is unparalleled."
+          author="John Doe"
+          position="CEO, Energy Solutions Inc."
+        />
+        <TestimonialCard
+          quote="The products from Carbon Holdings Ltd consistently meet our high standards. Their reliability and efficiency have greatly improved our operations."
+          author="Jane Smith"
+          position="Operations Manager, Petrotech Industries"
+        />
+      </div>
+    </div>
+  </section>
+)
+
+const TestimonialCard = ({ quote, author, position }) => (
+  <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <p className="text-gray-600 italic mb-4">"{quote}"</p>
+    <div className="font-semibold">{author}</div>
+    <div className="text-sm text-gray-500">{position}</div>
+  </div>
 )

@@ -4,8 +4,16 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
+import Head from 'next/head';
 
 const inter = Inter({ subsets: ['latin'] })
+
+export const metadata = {
+  title: 'Carbon Holdings Ltd',
+  icons: {
+    icon: '/chl-icon-logo.ico', // Ensure the path is correct
+  },
+};
 
 export default function RootLayout({
   children,
