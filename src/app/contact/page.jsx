@@ -32,7 +32,7 @@ export default function Contact() {
             </Head>
             <div className="min-h-screen bg-gray-100">
                 <main className="container mx-auto px-6 py-12">
-                    <h1 className="text-4xl font-bold text-center mb-12 animate-fadeInDown">Contact Us</h1>
+                    <h1 className="text-4xl font-bold text-center mb-12 animate-fadeInDown border-b-2 border-blue-500 w-fit mx-auto">Contact Us</h1>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <ContactForm formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} />
                         <ContactInfo />
@@ -99,10 +99,21 @@ const ContactInfo = () => (
         <div className="space-y-4">
             <ContactInfoItem
                 icon={<MapPin size={24} />}
-                title="Address"
+                title="Corporate Head Office"
                 content={
                     <>
                         BTMC Bhaban (7th Floor)<br />
+                        7-9 Kawran Bazar<br />
+                        Dhaka- 1217, Bangladesh
+                    </>
+                }
+            />
+            <ContactInfoItem
+                icon={<MapPin size={24} />}
+                title="Factory Address"
+                content={
+                    <>
+                        Golra Chorkhondo, Jagir, Manikganj<br />
                         7-9 Kawran Bazar<br />
                         Dhaka- 1217, Bangladesh
                     </>
@@ -115,7 +126,8 @@ const ContactInfo = () => (
                     <>
                         +880-2-8189244<br />
                         +880-2-8189321<br />
-                        +880-2-58155623
+                        +880-2-58155623 <br />
+                        +880-2-55012252
                     </>
                 }
             />
@@ -139,14 +151,28 @@ const ContactInfoItem = ({ icon, title, content }) => (
 )
 
 const Map = () => (
-    <div className="w-full h-96 mt-12">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.9047356271924!2d90.39194491498136!3d23.75089798458773!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b8bdb1967b21%3A0x6a4a9f67b5b72c4d!2sKawran%20Bazar%2C%20Dhaka%201215!5e0!3m2!1sen!2sbd!4v1625142643595!5m2!1sen!2sbd"
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen
-            loading="lazy"
-        ></iframe>
+    <div className="w-full md:px-16 px-6 py-16">
+        <div className='w-full h-96 shadow-md bg-white p-4 rounded-md'>
+            <h2 className="text-2xl font-semibold mb-6  border-b-2 border-blue-500 w-fit">Corporate Office Location</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d767.720257942813!2d90.39386207045591!3d23.750461243514565!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b897f9400001%3A0x7d74993af65c7dad!2sCarbon%20Holdings%20Ltd!5e0!3m2!1sen!2sbd!4v1727454055609!5m2!1sen!2sbd"
+                width="100%"
+                height="80%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+            ></iframe>
+        </div>
+        <div className='w-full h-96 shadow-md bg-white mt-12 p-4 rounded-md'>
+            <h2 className="text-2xl font-semibold mb-6 border-b-2 border-blue-500 w-fit">Factory Location</h2>
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d466941.99728691654!2d89.4252622!3d23.8901735!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755f6591dea5ef1%3A0x6183db04978c0696!2sCarbon%20Holdings%20Limited.%20Condensate%20Fractionation%20Plant!5e0!3m2!1sen!2sbd!4v1727454616992!5m2!1sen!2sbd"
+                width="100%"
+                height="80%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+            ></iframe>
+        </div>
     </div>
 )

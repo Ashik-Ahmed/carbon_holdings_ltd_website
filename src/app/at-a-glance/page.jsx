@@ -38,15 +38,15 @@ const KeyInformation = () => (
         <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-12">Carbon Holdings Ltd at a Glance</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <InfoCard icon={<Building size={40} />} title="Organization Type" description="Private Limited Company" />
+                {/* <InfoCard icon={<Building size={40} />} title="Organization Type" description="Private Limited Company" /> */}
                 <InfoCard icon={<Users size={40} />} title="Number of Employees" description="50" />
                 <InfoCard icon={<MapPin size={40} />} title="Factory Location" description="Golra Chorkhondo, Jagir, Manikganj" />
                 <InfoCard icon={<Maximize size={40} />} title="Factory Area" description="2.18 Acre" />
                 <InfoCard icon={<Factory size={40} />} title="Production Capacity" description="33,000 MT/Year" />
                 <InfoCard icon={<Briefcase size={40} />} title="Financed By" description="One Bank PLC Ltd." />
                 <InfoCard icon={<Shield size={40} />} title="Insurance" description="Eastern Insurance Co. Ltd." />
-                <InfoCard icon={<Scale size={40} />} title="Audits & Compliance" description="T. Hussain & Co." />
-                <InfoCard icon={<Book size={40} />} title="Legal Advisor" description="Farooq & Associates" />
+                {/* <InfoCard icon={<Scale size={40} />} title="Audits & Compliance" description="T. Hussain & Co." />
+                <InfoCard icon={<Book size={40} />} title="Legal Advisor" description="Farooq & Associates" /> */}
             </div>
         </div>
     </section>

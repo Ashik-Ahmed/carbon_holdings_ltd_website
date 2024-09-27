@@ -29,7 +29,7 @@ const Header = () => {
                             {/* <Droplet className="mr-2" />
                             Carbon Holdings Ltd */}
                             {/* <Image src="/logo.png" alt="Logo" width={250} height={32} /> */}
-                            <img src="/logo.png" alt="logo" width={300} height={20} />
+                            <Image src="/logo.png" alt="logo" width={300} height={20} />
                         </Link>
                     </div>
                     <div className="md:hidden">
@@ -47,19 +47,19 @@ const Header = () => {
             md:relative md:bg-transparent md:shadow-none
           `}>
                         <div className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 text-black md:p-0">
-                            <NavItem href="/" icon={<Home size={18} />} onClick={closeMenu} className={`${currentPath == '/' && 'border-b-4 border-blue-500 text-blue-500 transition-color duration-300'}`}>
+                            <NavItem href="/" icon={<Home size={18} />} onClick={closeMenu} className={`${currentPath == '/' && 'border-b-4 border-blue-500 text-blue-500 transition-color duration-300 px-2'}`}>
                                 Home
                             </NavItem>
-                            <NavItem href="/machineries" icon={<Cog size={18} />} onClick={closeMenu} className={`${currentPath == '/machineries' && 'border-b-4 border-blue-500 text-blue-500 transition-color duration-300'}`}>
+                            <NavItem href="/machineries" icon={<Cog size={18} />} onClick={closeMenu} className={`${currentPath == '/machineries' && 'border-b-4 border-blue-500 text-blue-500 transition-color duration-300 px-2'}`}>
                                 Machineries
                             </NavItem>
-                            <NavItem href="/about" icon={<Info size={18} />} onClick={closeMenu} className={`${currentPath == '/about' && 'border-b-4 border-blue-500 text-blue-500 transition-color duration-300'}`}>
+                            <NavItem href="/about" icon={<Info size={18} />} onClick={closeMenu} className={`${currentPath == '/about' && 'border-b-4 border-blue-500 text-blue-500 transition-color duration-300 px-2'}`}>
                                 About
                             </NavItem>
-                            <NavItem href="/at-a-glance" icon={<History size={18} />} onClick={closeMenu} className={`${currentPath == '/at-a-glance' && 'border-b-4 border-blue-500 text-blue-500 transition-color duration-300'}`}>
+                            <NavItem href="/at-a-glance" icon={<History size={18} />} onClick={closeMenu} className={`${currentPath == '/at-a-glance' && 'border-b-4 border-blue-500 text-blue-500 transition-color duration-300 px-2'}`}>
                                 At A Glance
                             </NavItem>
-                            <NavItem href="/contact" icon={<Phone size={18} />} onClick={closeMenu} className={`${currentPath == '/contact' && 'border-b-4 border-blue-500 text-blue-500 transition-color duration-300'}`}>
+                            <NavItem href="/contact" icon={<Phone size={18} />} onClick={closeMenu} className={`${currentPath == '/contact' && 'border-b-4 border-blue-500 text-blue-500 transition-color duration-300 px-2'}`}>
                                 Contact
                             </NavItem>
                         </div>

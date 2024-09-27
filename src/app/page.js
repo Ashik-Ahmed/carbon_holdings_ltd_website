@@ -2,6 +2,8 @@
 
 import { motion } from 'framer-motion'
 import { Droplet, Zap, Truck, BarChart, Globe, Award } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
 import Slider from 'react-slick'
 
 export default function Home() {
@@ -12,7 +14,7 @@ export default function Home() {
       {/* <About /> */}
       <Stats />
       <Features />
-      <Testimonials />
+      {/* <Testimonials /> */}
     </div>
   )
 }
@@ -62,7 +64,7 @@ const Hero = () => {
 
   return (
     <section className="relative h-screen w-full overflow-hidden">
-      <div className="absolute inset-0 z-10 bg-black bg-opacity-50 flex flex-col justify-center items-center text-white px-4">
+      <div className="absolute inset-0 z-10 bg-black bg-opacity-70 flex flex-col justify-center items-center text-white px-4">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -83,21 +85,21 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
           className="bg-white text-blue-600 font-bold py-2 px-4 rounded-full hover:bg-gray-100 transition-colors duration-200 animate-fadeIn">
-          Learn More
+          <Link href="/about">Learn More</Link>
         </motion.button>
       </div>
       <Slider {...settings} className="h-full">
         <div className="relative h-screen w-full">
-          <img src="/machineries-cover.jpg" alt="Carbon Holdings Facility" className="w-full h-full object-cover" />
+          <Image src="/machineries-cover.jpg" alt="Carbon Holdings Facility" height={450} width={1024} className="w-full h-full object-cover" />
         </div>
         <div className="relative h-screen w-full">
-          <img src="/site_pic3.jpg" alt="Motor Spirit Production" className="w-full h-full object-cover" />
+          <Image src="/site_pic3.jpg" alt="Motor Spirit Production" height={450} width={1024} className="w-full h-full object-cover" />
         </div>
         <div className="relative h-screen w-full">
-          <img src="/site_pic4.jpg" alt="Sustainable Energy" className="w-full h-full object-cover" />
+          <Image src="/site_pic4.jpg" alt="Sustainable Energy" height={450} width={1024} className="w-full h-full object-cover" />
         </div>
         <div className="relative h-screen w-full">
-          <img src="/about-us-cover.jpg" alt="Sustainable Energy" className="w-full h-full object-cover" />
+          <Image src="/about-us-cover.jpg" alt="Sustainable Energy" height={450} width={1024} className="w-full h-full object-cover" />
         </div>
       </Slider>
     </section >

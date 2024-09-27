@@ -2,6 +2,10 @@
 
 import Head from 'next/head'
 import { Factory, Droplet, Zap, Truck, RefreshCw } from 'lucide-react'
+import { motion } from 'framer-motion';
+
+const futureGoals = ["Investing in cutting-edge technology to improve production efficiency", "Developing our workforce through ongoing training and skill enhancement", "Exploring opportunities for expansion and diversification in the energy sector", "Strengthening our partnerships and fostering new collaborations within the industry"]
+
 
 export default function About() {
     return (
@@ -25,7 +29,7 @@ const Hero = () => (
     <section className="relative  text-white py-40" style={{
         backgroundImage: 'url(/about-us-cover.jpg)', backgroundSize: 'cover', backgroundRepeat: 'no-repeat', objectFit: 'fill'
     }}>
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="absolute inset-0 bg-black opacity-70"></div>
         <div className="relative container mx-auto px-6 text-center">
             <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fadeInDown">
                 About Carbon Holdings Ltd
@@ -49,7 +53,7 @@ const CompanyOverview = () => (
                     />
                 </div>
                 <div className="w-full md:w-1/2 md:pl-10">
-                    <h2 className="text-3xl font-bold mb-4 animate-fadeInRight">
+                    <h2 className="text-3xl font-bold mb-4 animate-fadeInRight border-b-2 border-blue-500 w-fit mx-auto">
                         About the Company
                     </h2>
                     <p className="text-gray-600 mb-4 animate-fadeInRight">
@@ -67,7 +71,7 @@ const CompanyOverview = () => (
 const ProductionDetails = () => (
     <section className="py-20 bg-blue-600 text-white">
         <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12">Our Production</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 border-b-2 border-white w-fit mx-auto">Our Production</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <ProductCard
                     icon={<Droplet size={40} />}
@@ -95,7 +99,7 @@ const ProductionDetails = () => (
 )
 
 const ProductCard = ({ icon, title, description }) => (
-    <div className="p-4 rounded-lg bg-blue-700 hover:bg-blue-800  transition-colors duration-300">
+    <div className="p-4 rounded-lg bg-blue-700 hover:bg-blue-800 transition-color duration-300">
         <div className="text-white mb-4">{icon}</div>
         <h3 className="text-xl font-semibold mb-2  text-white">{title}</h3>
         <p className="text-gray-200 ">{description}</p>
@@ -105,7 +109,7 @@ const ProductCard = ({ icon, title, description }) => (
 const StrategicPartnership = () => (
     <section className="py-20">
         <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12">Strategic Partnership and Future Growth</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 border-b-2 border-blue-500 w-fit mx-auto">Strategic Partnership and Future Growth</h2>
             <div className="flex flex-wrap items-center">
                 <div className="w-full md:w-1/2 mb-8 md:mb-0">
                     <img
@@ -135,7 +139,7 @@ const StrategicPartnership = () => (
 
 const FutureGrowth = () => (
     <div className='container mx-auto px-6 py-20'>
-        <h2 className="text-3xl font-bold text-center mb-12">Continuous Improvement and Growth</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 border-b-2 border-blue-500 w-fit mx-auto">Continuous Improvement and Growth</h2>
         {/* <div className="flex items-center text-blue-600 mb-4">
             <span className="font-semibold">Continuous Improvement and Growth</span>
         </div> */}
@@ -143,10 +147,46 @@ const FutureGrowth = () => (
             At Carbon Holdings Ltd., we are committed to continuous improvement and sustainable growth. Our focus on innovation, efficiency, and environmental responsibility drives us to constantly refine our processes and explore new opportunities. We aim to play a pivotal role in Bangladesh&apos;s energy future by:
         </p>
         <ul className="list-disc list-inside text-gray-600 mt-2 space-y-2 animate-fadeInRight">
-            <li>Investing in cutting-edge technology to improve production efficiency</li>
-            <li>Developing our workforce through ongoing training and skill enhancement</li>
-            <li>Exploring opportunities for expansion and diversification in the energy sector</li>
-            <li>Strengthening our partnerships and fostering new collaborations within the industry</li>
+
+            {
+                futureGoals.map((goal, index) => (
+                    <div key={index} className='flex items-center gap-x-2'>
+                        <motion.svg
+                            width="20"
+                            height="20"
+                            viewBox="0 0 20 20"
+                            className="flex-shrink-0 mt-1 text-blue-500 group-hover:text-blue-600"
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ duration: 0.3 }}
+                        >
+                            <motion.circle
+                                cx="10"
+                                cy="10"
+                                r="8"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                initial={{ pathLength: 0 }}
+                                animate={{ pathLength: 1 }}
+                                transition={{ duration: 0.5, delay: 0.2 }}
+                            />
+                            <motion.path
+                                d="M6 10l3 3 5-5"
+                                fill="none"
+                                stroke="currentColor"
+                                strokeWidth="2"
+                                initial={{ pathLength: 0 }}
+                                animate={{ pathLength: 1 }}
+                                transition={{ duration: 0.5, delay: 0.5 }}
+                            />
+                        </motion.svg>
+
+                        <p>{goal}</p>
+                    </div>
+                ))
+            }
+
         </ul>
     </div>
 )
