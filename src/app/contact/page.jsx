@@ -114,8 +114,6 @@ const ContactInfo = () => (
                 content={
                     <>
                         Golra Chorkhondo, Jagir, Manikganj<br />
-                        7-9 Kawran Bazar<br />
-                        Dhaka- 1217, Bangladesh
                     </>
                 }
             />

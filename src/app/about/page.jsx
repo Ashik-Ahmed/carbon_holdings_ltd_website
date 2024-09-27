@@ -119,13 +119,13 @@ const StrategicPartnership = () => (
                     />
                 </div>
                 <div className="w-full md:w-1/2 md:pl-10">
-                    <h3 className="text-2xl font-bold mb-4 animate-fadeInRight">
+                    <h3 className="text-gray-700 text-2xl font-bold mb-4 animate-fadeInRight">
                         Collaboration for Energy Security
                     </h3>
                     <p className="text-gray-600 mb-4 animate-fadeInRight">
                         Our operations are centered around a strategic partnership with Petrobangla and BPC. We receive natural gas condensate, process it into valuable products, and deliver the finished goods to BPC&apos;s marketing company. This collaboration plays a crucial role in ensuring a stable and reliable supply of fuels within Bangladesh.
                     </p>
-                    <h3 className="text-2xl font-bold mb-4 animate-fadeInRight">
+                    <h3 className="text-gray-700 text-2xl font-bold mb-4 animate-fadeInRight">
                         Expanding Our Capabilities
                     </h3>
                     <p className="text-gray-600 mb-4 animate-fadeInRight">
