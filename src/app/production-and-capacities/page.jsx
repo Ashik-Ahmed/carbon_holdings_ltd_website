@@ -4,8 +4,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { Droplet, Fuel, SquareCheck, Truck, Zap } from "lucide-react";
+import { useInView } from 'react-intersection-observer';
 
 const ProductionCapacitiesPage = () => {
+
+    const { ref, inView } = useInView({
+        triggerOnce: true, // Trigger only once
+        threshold: 0.1, // Adjust based on when you want to start the animation
+    });
+
     const fadeInUp = {
         initial: { opacity: 0, y: 20 },
         animate: { opacity: 1, y: 0 },
@@ -331,29 +338,34 @@ const ProductionCapacitiesPage = () => {
                         </div>
                         <div>
                             <h3 className="text-xl font-semibold mb-2 border-b-2 pb-2 border-primary">Production Ratio</h3>
-                            <div className="w-full">
-                                <ResponsiveContainer width="100%" height={400}>
-                                    <PieChart>
-                                        <Pie
-                                            data={productionRatioData}
-                                            cx="50%"
-                                            cy="50%"
-                                            labelLine={false}
-                                            innerRadius={80}
-                                            outerRadius={120}
-                                            fill="#8884d8"
-                                            dataKey="value"
-                                            label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                                        >
-                                            {productionRatioData.map((entry, index) => (
-                                                <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                                            ))}
-                                        </Pie>
-                                        <Tooltip />
-                                    </PieChart>
-                                </ResponsiveContainer>
+                            <div className="w-full" ref={ref}>
+                                {
+                                    inView && (
+                                        <ResponsiveContainer width="100%" height={400}>
+                                            <PieChart>
+                                                <Pie
+                                                    data={productionRatioData}
+                                                    cx="50%"
+                                                    cy="50%"
+                                                    labelLine={false}
+                                                    innerRadius={80}
+                                                    outerRadius={120}
+                                                    paddingAngle={2}
+                                                    fill="#8884d8"
+                                                    dataKey="value"
+                                                    label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                                                >
+                                                    {productionRatioData.map((entry, index) => (
+                                                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                                                    ))}
+                                                </Pie>
+                                                <Tooltip />
+                                            </PieChart>
+                                        </ResponsiveContainer>
+                                    )
+                                }
                                 <div className='text-center'>
-                                    <p className='text-secondary'>Fig: Product Yield pattern- Natural gas condensate</p>
+                                    <p className='italic underline'>Fig: Product Yield pattern- Natural gas condensate</p>
                                 </div>
                             </div>
                         </div>
