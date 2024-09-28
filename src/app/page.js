@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from 'framer-motion'
-import { Droplet, Zap, Truck, BarChart, Globe, Award } from 'lucide-react'
+import { Droplet, Zap, Truck, BarChart, Globe, Award, Fuel } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Slider from 'react-slick'
@@ -110,7 +110,7 @@ const Products = () => (
   <section className="py-20 bg-gray-100">
     <div className="container mx-auto px-6">
       <h2 className="text-3xl font-bold text-center mb-8 border-b-2 border-primary w-fit mx-auto">Our Products</h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <ProductCard
           icon={<Droplet size={40} />}
           title="Motor Spirit (MS)"
@@ -125,6 +125,11 @@ const Products = () => (
           icon={<Truck size={40} />}
           title="Mineral Turpentine (MTT)"
           description="Versatile solvent for various industrial uses"
+        />
+        <ProductCard
+          icon={<Fuel size={40} />}
+          title="Kerosene (SKO)"
+          description="Lightweight fuel for use in low-temperature applications"
         />
       </div>
     </div>

@@ -3,7 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
-import { SquareCheck } from "lucide-react";
+import { Droplet, Fuel, SquareCheck, Truck, Zap } from "lucide-react";
 
 const ProductionCapacitiesPage = () => {
     const fadeInUp = {
@@ -13,11 +13,13 @@ const ProductionCapacitiesPage = () => {
     };
 
     const productionRatioData = [
-        { name: 'Distillate (MS, MTT)', value: 80 },
-        { name: 'Bottom Products (SKO, HSD)', value: 20 },
+        { name: 'MS', value: 75 },
+        { name: 'MTT', value: 7 },
+        { name: 'HSD', value: 16 },
+        { name: 'Process Loss', value: 2 },
     ];
 
-    const COLORS = ['#0088FE', '#00C49F'];
+    const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
     const rawMaterialSpec = [
         { test: 'Range of Boiling Point, °C', method: 'D 1160', results: '21-345' },
@@ -51,7 +53,7 @@ const ProductionCapacitiesPage = () => {
             <motion.section {...fadeInUp} className="mb-12">
                 <div className="bg-white shadow-md rounded-lg p-6">
                     <h2 className="text-2xl font-semibold mb-4">Processing and Storage</h2>
-                    <h3 className="text-gray-700 text-xl font-semibold mb-2">Daily Production Facility: 100 Metric Ton/year</h3>
+                    <h3 className="text-gray-700 text-xl font-semibold mb-2">Daily Production Facility: 100 Metric Ton</h3>
                     <ul className="list-disc list-inside mb-4">
                         <div className='flex items-center gap-x-4'>
                             <svg
@@ -185,29 +187,35 @@ const ProductionCapacitiesPage = () => {
             </motion.section> */}
 
             <motion.section {...fadeInUp} className="mb-12">
+                <Products />
+            </motion.section>
+
+
+            <motion.section {...fadeInUp} className="mb-12">
                 <div className="bg-white shadow-md rounded-lg p-6">
-                    <h2 className="text-2xl font-semibold mb-4">Our Products</h2>
+                    {/* <h2 className="text-2xl font-semibold mb-4">Our Products</h2>
                     <ul className="list-disc list-inside mb-4">
                         <li>Motor Spirit (MS)</li>
                         <li>High Speed Diesel (HSD)</li>
                         <li>Mineral Turpentine (MTT)</li>
                         <li>Kerosene (SKO)</li>
-                    </ul>
+                    </ul> */}
                     <h3 className="text-xl font-semibold mb-2">Production Capacity</h3>
                     <ul className="list-disc list-inside mb-4">
                         <li>Capacity: 33,000 MT/year</li>
                         <li>Daily Production Capacity: 100 MT/day</li>
                     </ul>
                     <h3 className="text-xl font-semibold mb-2">Production Ratio</h3>
-                    <div className="w-full h-64">
-                        <ResponsiveContainer>
+                    <div className="w-full">
+                        <ResponsiveContainer width="100%" height={400}>
                             <PieChart>
                                 <Pie
                                     data={productionRatioData}
                                     cx="50%"
                                     cy="50%"
                                     labelLine={false}
-                                    outerRadius={80}
+                                    innerRadius={80}
+                                    outerRadius={120}
                                     fill="#8884d8"
                                     dataKey="value"
                                     label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
@@ -219,6 +227,9 @@ const ProductionCapacitiesPage = () => {
                                 <Tooltip />
                             </PieChart>
                         </ResponsiveContainer>
+                        <div className='text-center'>
+                            <p className='text-primary'>Fig: Product Yield pattern- Natural gas condensate</p>
+                        </div>
                     </div>
                 </div>
             </motion.section>
@@ -279,5 +290,47 @@ const ProductionCapacitiesPage = () => {
         </div>
     );
 };
+
+
+
+export const Products = () => (
+    <section className="py-20 bg-primary rounded-lg">
+        <div className="container mx-auto px-6">
+            <h2 className="text-white text-3xl font-bold text-center mb-8 border-b-2 border-white w-fit mx-auto ">Our Products</h2>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <ProductCard
+                    icon={<Droplet size={40} />}
+                    title="Motor Spirit (MS)"
+                    description="High-quality petrol for optimal engine performance"
+                />
+                <ProductCard
+                    icon={<Zap size={40} />}
+                    title="High-Speed Diesel (HSD)"
+                    description="Efficient diesel fuel for heavy-duty applications"
+                />
+                <ProductCard
+                    icon={<Truck size={40} />}
+                    title="Mineral Turpentine (MTT)"
+                    description="Versatile solvent for various industrial uses"
+                />
+                <ProductCard
+                    icon={<Fuel size={40} />}
+                    title="Kerosene (SKO)"
+                    description="Lightweight fuel for use in low-temperature applications"
+                />
+            </div>
+        </div>
+    </section>
+)
+
+const ProductCard = ({ icon, title, description }) => (
+    <div
+        className="bg-secondary p-6 hover:border rounded-lg hover:border-gray-200 transition-all duration-300 transform hover:scale-105"
+    >
+        <div className="text-white mb-4">{icon}</div>
+        <h3 className="text-white text-xl font-semibold mb-2">{title}</h3>
+        <p className="text-gray-100">{description}</p>
+    </div>
+)
 
 export default ProductionCapacitiesPage;

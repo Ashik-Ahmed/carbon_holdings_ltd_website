@@ -2,8 +2,7 @@
 
 import { useState, useCallback } from 'react'
 import Link from 'next/link'
-import { Droplet, Home, Info, Phone, Menu, X, Cog, History } from 'lucide-react'
-import { Notebook } from 'lucide-react'
+import { Home, Info, Phone, Menu, X, Cog, History, TrendingUp } from 'lucide-react'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 
@@ -52,6 +51,9 @@ const Header = () => {
                             </NavItem>
                             <NavItem href="/machineries" icon={<Cog size={18} />} onClick={closeMenu} className={`${currentPath == '/machineries' && 'border-b-4 border-primary text-primary transition-color duration-300 px-2'}`}>
                                 Machineries
+                            </NavItem>
+                            <NavItem href="/production-and-capacities" icon={<TrendingUp size={18} />} onClick={closeMenu} className={`${currentPath == '/production-and-capacities' && 'border-b-4 border-primary text-primary transition-color duration-300 px-2'}`}>
+                                Capacity
                             </NavItem>
                             <NavItem href="/about" icon={<Info size={18} />} onClick={closeMenu} className={`${currentPath == '/about' && 'border-b-4 border-primary text-primary transition-color duration-300 px-2'}`}>
                                 About
