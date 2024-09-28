@@ -84,7 +84,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
-          className="bg-white text-blue-600 font-bold py-2 px-4 rounded-full hover:bg-gray-100 transition-colors duration-200 animate-fadeIn">
+          className="bg-primary text-white font-bold py-2 px-4 rounded-full hover:bg-secondary transition-colors duration-200 animate-fadeIn">
           <Link href="/about">Learn More</Link>
         </motion.button>
       </div>
@@ -109,7 +109,7 @@ const Hero = () => {
 const Products = () => (
   <section className="py-20 bg-gray-100">
     <div className="container mx-auto px-6">
-      <h2 className="text-3xl font-bold text-center mb-8 border-b-2 border-blue-500 w-fit mx-auto">Our Products</h2>
+      <h2 className="text-3xl font-bold text-center mb-8 border-b-2 border-primary w-fit mx-auto">Our Products</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <ProductCard
           icon={<Droplet size={40} />}
@@ -133,9 +133,9 @@ const Products = () => (
 
 const ProductCard = ({ icon, title, description }) => (
   <div
-    className="p-6 border border-gray-200 rounded-lg hover:border-blue-500 transition-all duration-300 transform hover:scale-105"
+    className="p-6 border border-gray-200 rounded-lg hover:border-primary transition-all duration-300 transform hover:scale-105"
   >
-    <div className="text-blue-600 mb-4">{icon}</div>
+    <div className="text-primary mb-4">{icon}</div>
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p className="text-gray-600">{description}</p>
   </div>
@@ -187,7 +187,7 @@ const About = () => (
 
 
 const Stats = () => (
-  <section className="py-20 bg-blue-600 text-white">
+  <section className="py-20 bg-primary text-white">
     <div className="container mx-auto px-6">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
         <StatItem number="100+" label="Metric Tons Daily Production" />
@@ -199,7 +199,7 @@ const Stats = () => (
 )
 
 const StatItem = ({ number, label }) => (
-  <div className="p-4 rounded-lg bg-blue-700 hover:bg-blue-800 transition-colors duration-300">
+  <div className="p-4 rounded-lg bg-secondary hover:bg-tertiary transition-colors duration-300">
     <h3 className="text-4xl font-bold mb-2">{number}</h3>
     <p className="text-xl">{label}</p>
   </div>
@@ -208,7 +208,7 @@ const StatItem = ({ number, label }) => (
 const Features = () => (
   <section className="py-20">
     <div className="container mx-auto px-6">
-      <h2 className="text-3xl font-bold text-center mb-12 border-b-2 border-blue-500 w-fit mx-auto">Why Choose Us</h2>
+      <h2 className="text-3xl font-bold text-center mb-12 border-b-2 border-primary w-fit mx-auto">Why Choose Us</h2>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <FeatureCard
           icon={<BarChart size={40} />}
@@ -231,8 +231,8 @@ const Features = () => (
 )
 
 const FeatureCard = ({ icon, title, description }) => (
-  <div className="p-6 border border-gray-200 rounded-lg hover:border-blue-500 transition-all duration-300 transform hover:scale-105">
-    <div className="text-blue-600 mb-4">{icon}</div>
+  <div className="p-6 border border-gray-200 rounded-lg hover:border-primary transition-all duration-300 transform hover:scale-105">
+    <div className="text-primary mb-4">{icon}</div>
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p className="text-gray-600">{description}</p>
   </div>

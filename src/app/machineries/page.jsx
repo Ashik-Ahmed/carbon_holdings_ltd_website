@@ -37,7 +37,7 @@ const MachineItem = ({ title, image, details, index }) => {
                 width="20"
                 height="20"
                 viewBox="0 0 20 20"
-                className="flex-shrink-0 mt-1 text-blue-500 group-hover:text-blue-600"
+                className="flex-shrink-0 mt-1 text-primary group-hover:text-secondary"
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ duration: 0.3 }}
@@ -63,7 +63,7 @@ const MachineItem = ({ title, image, details, index }) => {
                     transition={{ duration: 0.5, delay: 0.5 }}
                 />
             </motion.svg>
-            <span className="group-hover:text-blue-600">{children}</span>
+            <span className="group-hover:text-secondary">{children}</span>
         </motion.li>
     );
 
@@ -76,10 +76,10 @@ const MachineItem = ({ title, image, details, index }) => {
         >
             <motion.h3
                 variants={contentVariants}
-                className="relative w-fit text-2xl font-bold text-gray-600 p-6 text-center border-b-2 border-blue-400 hover:text-white hover:shadow-md hover:shadow-blue-500 rounded-full transition-all duration-300 group z-10"
+                className="relative w-fit text-2xl font-bold text-gray-600 p-6 text-center border-b-2 border-primary hover:text-white hover:shadow-md hover:shadow-secondary rounded-full transition-all duration-300 group z-10"
             >
                 {/* {title} */}
-                <span className="absolute inset-0 rounded-full bg-sky-300 left-0 w-full h-full transition-all duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100 origin-left z-0"></span>
+                <span className="absolute inset-0 rounded-full bg-primary left-0 w-full h-full transition-all duration-500 ease-in-out transform scale-x-0 group-hover:scale-x-100 origin-left z-0"></span>
                 <span className="relative z-10">{title}</span>
             </motion.h3>
             <div className={`flex flex-col md:flex-row my-4 ${index % 2 === 0 ? 'md:flex-row-reverse' : ''}`}>

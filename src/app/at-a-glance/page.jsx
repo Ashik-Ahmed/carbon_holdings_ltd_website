@@ -36,7 +36,7 @@ const Hero = () => (
 const KeyInformation = () => (
     <section className="py-20 bg-gray-100">
         <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12">Carbon Holdings Ltd at a Glance</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 w-fit mx-auto border-b-2 border-primary">Carbon Holdings Ltd at a Glance</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {/* <InfoCard icon={<Building size={40} />} title="Organization Type" description="Private Limited Company" /> */}
                 <InfoCard icon={<Users size={40} />} title="Number of Employees" description="50" />
@@ -53,8 +53,8 @@ const KeyInformation = () => (
 )
 
 const InfoCard = ({ icon, title, description }) => (
-    <div className="p-6 bg-white border border-gray-200 rounded-lg hover:border-blue-500 transition-all duration-300 transform hover:scale-105">
-        <div className="text-blue-600 mb-4">{icon}</div>
+    <div className="p-6 bg-white border border-gray-200 rounded-lg hover:border-primary transition-all duration-300 transform hover:scale-105">
+        <div className="text-primary mb-4">{icon}</div>
         <h3 className="text-xl font-semibold mb-2">{title}</h3>
         <p className="text-gray-600">{description}</p>
     </div>
@@ -63,9 +63,9 @@ const InfoCard = ({ icon, title, description }) => (
 const Timeline = () => (
     <section className="py-20">
         <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12">Our Journey</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 w-fit mx-auto border-b-2 border-primary">Our Journey</h2>
             <div className="relative">
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-blue-200"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary opacity-40"></div>
                 <TimelineItem year="2016" event="Establishment of Carbon Holdings Ltd" side="left" />
                 <TimelineItem year="2016" event="Construction of fractionation plant begins" side="right" />
                 <TimelineItem year="2017" event="Plant becomes operational" side="left" />
@@ -81,14 +81,14 @@ const TimelineItem = ({ year, event, side }) => (
     <div className={`flex ${side === 'left' ? 'flex-row-reverse' : ''}  items-center justify-between w-full mb-8`}>
         <div className="w-5/12"></div>
         <div className="z-20">
-            <div className="bg-blue-600 rounded-full w-8 h-8 flex items-center justify-center ">
+            <div className="bg-primary rounded-full w-8 h-8 flex items-center justify-center ">
                 <Calendar size={20} className="text-white" />
             </div>
         </div>
-        <div className="w-5/12 hover:border-blue-500 transition-all duration-300 transform hover:scale-105">
-            <div className={`bg-white p-4 rounded shadow ${side === 'left' ? 'text-right' : ''} `}>
+        <div className="w-5/12  transition-all duration-300 transform hover:scale-105">
+            <div className={`bg-primary hover:bg-tertiary text-white p-4 rounded shadow ${side === 'left' ? 'text-right' : ''} `}>
                 <h3 className="font-bold text-lg mb-1">{year}</h3>
-                <p className="text-gray-700">{event}</p>
+                <p className="text-gray-100">{event}</p>
             </div>
         </div>
     </div>

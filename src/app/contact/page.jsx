@@ -32,7 +32,7 @@ export default function Contact() {
             </Head>
             <div className="min-h-screen bg-gray-100">
                 <main className="container mx-auto px-6 py-12">
-                    <h1 className="text-4xl font-bold text-center mb-12 animate-fadeInDown border-b-2 border-blue-500 w-fit mx-auto">Contact Us</h1>
+                    <h1 className="text-4xl font-bold text-center mb-12 animate-fadeInDown border-b-2 border-primary w-fit mx-auto">Contact Us</h1>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                         <ContactForm formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} />
                         <ContactInfo />
@@ -55,7 +55,7 @@ const ContactForm = ({ formData, handleChange, handleSubmit }) => (
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                 required
             />
         </div>
@@ -67,7 +67,7 @@ const ContactForm = ({ formData, handleChange, handleSubmit }) => (
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                 required
             />
         </div>
@@ -79,13 +79,13 @@ const ContactForm = ({ formData, handleChange, handleSubmit }) => (
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                 required
             ></textarea>
         </div>
         <button
             type="submit"
-            className="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center"
+            className="w-full bg-primary text-white font-bold py-2 px-4 rounded-md hover:bg-secondary transition-colors duration-300 flex items-center justify-center"
         >
             <Send size={18} className="mr-2" />
             Send Message
@@ -140,7 +140,7 @@ const ContactInfo = () => (
 
 const ContactInfoItem = ({ icon, title, content }) => (
     <div className="flex items-start">
-        <div className="text-blue-600 mr-4">{icon}</div>
+        <div className="text-primary mr-4">{icon}</div>
         <div>
             <h3 className="font-semibold">{title}</h3>
             <p className="text-gray-600">{content}</p>
@@ -151,7 +151,7 @@ const ContactInfoItem = ({ icon, title, content }) => (
 const Map = () => (
     <div className="w-full md:px-16 px-6 py-16">
         <div className='w-full h-96 shadow-md bg-white p-4 rounded-md'>
-            <h2 className="text-2xl font-semibold mb-6  border-b-2 border-blue-500 w-fit">Corporate Office Location</h2>
+            <h2 className="text-2xl font-semibold mb-6  border-b-2 border-primary w-fit">Corporate Office Location</h2>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d767.720257942813!2d90.39386207045591!3d23.750461243514565!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b897f9400001%3A0x7d74993af65c7dad!2sCarbon%20Holdings%20Ltd!5e0!3m2!1sen!2sbd!4v1727454055609!5m2!1sen!2sbd"
                 width="100%"
@@ -162,7 +162,7 @@ const Map = () => (
             ></iframe>
         </div>
         <div className='w-full h-96 shadow-md bg-white mt-12 p-4 rounded-md'>
-            <h2 className="text-2xl font-semibold mb-6 border-b-2 border-blue-500 w-fit">Factory Location</h2>
+            <h2 className="text-2xl font-semibold mb-6 border-b-2 border-primary w-fit">Factory Location</h2>
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d466941.99728691654!2d89.4252622!3d23.8901735!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755f6591dea5ef1%3A0x6183db04978c0696!2sCarbon%20Holdings%20Limited.%20Condensate%20Fractionation%20Plant!5e0!3m2!1sen!2sbd!4v1727454616992!5m2!1sen!2sbd"
                 width="100%"

@@ -4,7 +4,7 @@ import { Facebook, Twitter, Linkedin } from 'lucide-react'
 
 const Footer = () => {
     return (
-        <footer className="bg-gray-800 text-white">
+        <footer className="bg-primary text-white">
             <div className="container mx-auto px-6 py-8">
                 <div className="flex flex-wrap justify-between items-center">
                     <div className="w-full md:w-1/3 text-center md:text-left">
@@ -22,7 +22,7 @@ const Footer = () => {
                 </div>
             </div>
             <div className='w-full'>
-                <p className='text-center text-sm font-light'>Developed by <a href="https://lamdatelecombd.com/" target="_blank" className='text-blue-500'>Lamda Telecom</a></p>
+                <p className='text-center text-sm font-light'>Developed by <a href="https://lamdatelecombd.com/" target="_blank">Lamda Telecom</a></p>
             </div>
         </footer>
     )

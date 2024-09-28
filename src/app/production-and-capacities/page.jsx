@@ -40,7 +40,7 @@ const ProductionCapacitiesPage = () => {
     return (
         <div className="container mx-auto px-4 py-8">
             <motion.h1
-                className="text-4xl font-bold mb-8 text-center text-blue-600"
+                className="text-4xl font-bold mb-8 text-center text-primary"
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
@@ -58,7 +58,7 @@ const ProductionCapacitiesPage = () => {
                                 width="20"
                                 height="20"
                                 viewBox="0 0 20 20"
-                                className="flex-shrink-0 mt-1 text-blue-500 group-hover:text-blue-600"
+                                className="flex-shrink-0 mt-1 text-primary"
                             >
                                 <circle
                                     cx="10"
@@ -82,7 +82,7 @@ const ProductionCapacitiesPage = () => {
                                 width="20"
                                 height="20"
                                 viewBox="0 0 20 20"
-                                className="flex-shrink-0 mt-1 text-blue-500 group-hover:text-blue-600"
+                                className="flex-shrink-0 mt-1 text-primary"
                             >
                                 <circle
                                     cx="10"
@@ -109,7 +109,7 @@ const ProductionCapacitiesPage = () => {
                                 width="20"
                                 height="20"
                                 viewBox="0 0 20 20"
-                                className="flex-shrink-0 mt-1 text-blue-500 group-hover:text-blue-600"
+                                className="flex-shrink-0 mt-1 text-primary"
                             >
                                 <circle
                                     cx="10"
@@ -133,7 +133,7 @@ const ProductionCapacitiesPage = () => {
                                 width="20"
                                 height="20"
                                 viewBox="0 0 20 20"
-                                className="flex-shrink-0 mt-1 text-blue-500 group-hover:text-blue-600"
+                                className="flex-shrink-0 mt-1 text-primary"
                             >
                                 <circle
                                     cx="10"
@@ -153,33 +153,36 @@ const ProductionCapacitiesPage = () => {
                             <span>Finished Product Storage: 1,457.883 MT</span>
                         </div>
                     </ul>
-                </div>
-            </motion.section>
-
-            <motion.section {...fadeInUp} className="mb-12">
-                <div className="bg-white shadow-md rounded-lg p-6">
-                    <h2 className="text-2xl font-semibold mb-4">Pump Requirement & Capacity</h2>
-                    <div className="overflow-x-auto">
-                        <table className="min-w-full bg-white">
-                            <thead className="bg-blue-500 text-white">
-                                <tr>
-                                    <th className="px-4 py-2 text-left">Pump</th>
-                                    <th className="px-4 py-2 text-left">Requirement (kW)</th>
-                                    <th className="px-4 py-2 text-left">Existing Capacity (kW)</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td className="px-4 py-2">Feed Pump (P-101A/101B)</td><td className="px-4 py-2">4.97</td><td className="px-4 py-2">11</td></tr>
-                                <tr className="bg-gray-50"><td className="px-4 py-2">Reflux Pump (P-102A/102B)</td><td className="px-4 py-2">6.58</td><td className="px-4 py-2">11</td></tr>
-                                <tr><td className="px-4 py-2">Product Pump (P-103/104)</td><td className="px-4 py-2">2.70</td><td className="px-4 py-2">11</td></tr>
-                                <tr className="bg-gray-50"><td className="px-4 py-2">Reflux/ Product Pump (P-105)</td><td className="px-4 py-2">2.51</td><td className="px-4 py-2">7.5</td></tr>
-                                <tr><td className="px-4 py-2">Reflux Product Pump (P-106)</td><td className="px-4 py-2">2.61</td><td className="px-4 py-2">7.5</td></tr>
-                                <tr className="bg-gray-50"><td className="px-4 py-2">Product Pump (P-107A/107B)</td><td className="px-4 py-2">5.08</td><td className="px-4 py-2">11</td></tr>
-                            </tbody>
-                        </table>
+                    <div>
+                        <h2 className="text-gray-700 text-xl font-semibold mb-2">Pump Requirement & Capacity</h2>
+                        <div className="overflow-x-auto">
+                            <table className="min-w-full bg-white">
+                                <thead className="bg-primary text-white">
+                                    <tr>
+                                        <th className="px-4 py-2 text-left">Pump</th>
+                                        <th className="px-4 py-2 text-left">Requirement (kW)</th>
+                                        <th className="px-4 py-2 text-left">Existing Capacity (kW)</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td className="px-4 py-2">Feed Pump (P-101A/101B)</td><td className="px-4 py-2">4.97</td><td className="px-4 py-2">11</td></tr>
+                                    <tr className="bg-gray-50"><td className="px-4 py-2">Reflux Pump (P-102A/102B)</td><td className="px-4 py-2">6.58</td><td className="px-4 py-2">11</td></tr>
+                                    <tr><td className="px-4 py-2">Product Pump (P-103/104)</td><td className="px-4 py-2">2.70</td><td className="px-4 py-2">11</td></tr>
+                                    <tr className="bg-gray-50"><td className="px-4 py-2">Reflux/ Product Pump (P-105)</td><td className="px-4 py-2">2.51</td><td className="px-4 py-2">7.5</td></tr>
+                                    <tr><td className="px-4 py-2">Reflux Product Pump (P-106)</td><td className="px-4 py-2">2.61</td><td className="px-4 py-2">7.5</td></tr>
+                                    <tr className="bg-gray-50"><td className="px-4 py-2">Product Pump (P-107A/107B)</td><td className="px-4 py-2">5.08</td><td className="px-4 py-2">11</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </motion.section>
+
+            {/* <motion.section {...fadeInUp} className="mb-12">
+                <div className="bg-white shadow-md rounded-lg p-6">
+
+                </div>
+            </motion.section> */}
 
             <motion.section {...fadeInUp} className="mb-12">
                 <div className="bg-white shadow-md rounded-lg p-6">
@@ -225,7 +228,7 @@ const ProductionCapacitiesPage = () => {
                     <h2 className="text-2xl font-semibold mb-4">Raw Material Specification</h2>
                     <div className="overflow-x-auto">
                         <table className="min-w-full bg-white">
-                            <thead className="bg-blue-500 text-white">
+                            <thead className="bg-primary text-white">
                                 <tr>
                                     <th className="px-4 py-2 text-left">Test</th>
                                     <th className="px-4 py-2 text-left">Method</th>
@@ -251,7 +254,7 @@ const ProductionCapacitiesPage = () => {
                     <h2 className="text-2xl font-semibold mb-4">Laboratory Testing & Quality Control Facility</h2>
                     <div className="overflow-x-auto">
                         <table className="min-w-full bg-white">
-                            <thead className="bg-blue-500 text-white">
+                            <thead className="bg-primary text-white">
                                 <tr>
                                     <th className="px-4 py-2 text-left">SL No</th>
                                     <th className="px-4 py-2 text-left">Test Name/Purpose</th>

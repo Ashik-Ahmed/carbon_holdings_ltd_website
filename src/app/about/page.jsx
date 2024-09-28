@@ -3,6 +3,7 @@
 import Head from 'next/head'
 import { Factory, Droplet, Zap, Truck, RefreshCw } from 'lucide-react'
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 const futureGoals = ["Investing in cutting-edge technology to improve production efficiency", "Developing our workforce through ongoing training and skill enhancement", "Exploring opportunities for expansion and diversification in the energy sector", "Strengthening our partnerships and fostering new collaborations within the industry"]
 
@@ -46,14 +47,16 @@ const CompanyOverview = () => (
         <div className="container mx-auto px-6">
             <div className="flex flex-wrap items-center">
                 <div className="w-full md:w-1/2 mb-8 md:mb-0">
-                    <img
+                    <Image
                         src="/site_pic3.jpg"
                         alt="Carbon Holdings Ltd Facility in Manikganj"
+                        width={600}
+                        height={500}
                         className="rounded-lg shadow-lg animate-fadeInLeft"
                     />
                 </div>
                 <div className="w-full md:w-1/2 md:pl-10">
-                    <h2 className="text-3xl font-bold mb-4 animate-fadeInRight border-b-2 border-blue-500 w-fit mx-auto">
+                    <h2 className="text-3xl font-bold mb-4 animate-fadeInRight border-b-2 border-primary w-fit mx-auto">
                         About the Company
                     </h2>
                     <p className="text-gray-600 mb-4 animate-fadeInRight">
@@ -69,7 +72,7 @@ const CompanyOverview = () => (
 )
 
 const ProductionDetails = () => (
-    <section className="py-20 bg-blue-600 text-white">
+    <section className="py-20 bg-primary text-white">
         <div className="container mx-auto px-6">
             <h2 className="text-3xl font-bold text-center mb-12 border-b-2 border-white w-fit mx-auto">Our Production</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -99,7 +102,7 @@ const ProductionDetails = () => (
 )
 
 const ProductCard = ({ icon, title, description }) => (
-    <div className="p-4 rounded-lg bg-blue-700 hover:bg-blue-800 transition-color duration-300">
+    <div className="p-4 rounded-lg bg-secondary hover:bg-tertiary transition-color duration-300">
         <div className="text-white mb-4">{icon}</div>
         <h3 className="text-xl font-semibold mb-2  text-white">{title}</h3>
         <p className="text-gray-200 ">{description}</p>
@@ -109,12 +112,14 @@ const ProductCard = ({ icon, title, description }) => (
 const StrategicPartnership = () => (
     <section className="py-20">
         <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12 border-b-2 border-blue-500 w-fit mx-auto">Strategic Partnership and Future Growth</h2>
+            <h2 className="text-3xl font-bold text-center mb-12 border-b-2 border-primary w-fit mx-auto">Strategic Partnership and Future Growth</h2>
             <div className="flex flex-wrap items-center">
                 <div className="w-full md:w-1/2 mb-8 md:mb-0">
-                    <img
+                    <Image
                         src="/site_pic2.jpg"
                         alt="Carbon Holdings Ltd Strategic Partnership"
+                        width={600}
+                        height={500}
                         className="rounded-lg shadow-lg animate-fadeInLeft"
                     />
                 </div>
@@ -139,7 +144,7 @@ const StrategicPartnership = () => (
 
 const FutureGrowth = () => (
     <div className='container mx-auto px-6 py-20'>
-        <h2 className="text-3xl font-bold text-center mb-12 border-b-2 border-blue-500 w-fit mx-auto">Continuous Improvement and Growth</h2>
+        <h2 className="text-3xl font-bold text-center mb-12 border-b-2 border-primary w-fit mx-auto">Continuous Improvement and Growth</h2>
         {/* <div className="flex items-center text-blue-600 mb-4">
             <span className="font-semibold">Continuous Improvement and Growth</span>
         </div> */}
@@ -155,7 +160,7 @@ const FutureGrowth = () => (
                             width="20"
                             height="20"
                             viewBox="0 0 20 20"
-                            className="flex-shrink-0 mt-1 text-blue-500 group-hover:text-blue-600"
+                            className="flex-shrink-0 mt-1 text-primary"
                             initial={{ scale: 0 }}
                             animate={{ scale: 1 }}
                             transition={{ duration: 0.3 }}
