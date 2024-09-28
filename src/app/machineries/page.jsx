@@ -92,7 +92,7 @@ const MachineItem = ({ title, image, details, index }) => {
                         alt={title}
                         width={500}
                         height={500}
-                        className="w-full h-full object-cover"
+                        className="w-[600px] h-[450px] object-cover rounded-lg shadow-lg"
                     />
                 </motion.div>
                 <motion.div
@@ -114,7 +114,7 @@ const MachineryPage = () => {
     const machines = [
         {
             title: "Thermal Oil Boiler ATTSU Model FT 3000/3489 kW",
-            image: "/about-us-cover.jpg",
+            image: "/mechinaries/thermal_oil_boiler_ATTSU_ft_3000.jpg",
             details: [
                 "Inlet/outlet manifold: seamless steel ASTM A106b sch 40 tube",
                 "Metallic shell: S235 JR",
@@ -126,7 +126,7 @@ const MachineryPage = () => {
         },
         {
             title: "Reboiler B101",
-            image: "/about-us-cover.jpg",
+            image: "/mechinaries/reboiler_b101.png",
             details: [
                 "Operating Pressure: 0.25MPa",
                 "Operating Temperature: 275℃",
@@ -138,7 +138,7 @@ const MachineryPage = () => {
         },
         {
             title: "Distillation Column C101",
-            image: "/about-us-cover.jpg",
+            image: "/mechinaries/distillation_column_c101.png",
             details: [
                 "Operating Pressure: 0.25MPa",
                 "Operating Temperature: 275℃",
@@ -151,7 +151,7 @@ const MachineryPage = () => {
         },
         {
             title: "Nitrogen Generation Plant",
-            image: "/about-us-cover.jpg",
+            image: "/mechinaries/nitrogen_generation_plant.jpg",
             details: [
                 "Nitrogen displacement: 20 Nm3/h",
                 "Air needed: 2.6m³/min",
@@ -162,7 +162,7 @@ const MachineryPage = () => {
         },
         {
             title: "Shell & Tube Heat Exchanger (E-101, E-102, E-103)",
-            image: "/about-us-cover.jpg",
+            image: "/mechinaries/heat_exchanger_e-101.png",
             details: [
                 "Size: 16'' NPS Sch. 40 x 6,400 mm OAL",
                 "Tube: SA213 TP304 SMLS OD 19.05 mm x 1.65 mm (Min.). Thick x approx.5,486 mm in length",
@@ -175,7 +175,7 @@ const MachineryPage = () => {
         },
         {
             title: "Air Cooled Heat Exchanger",
-            image: "/about-us-cover.jpg",
+            image: "/mechinaries/air_cooled_heat_exchanger.png",
             details: [
                 "Tube Material: A179",
                 "Tube Size: OD 25.40mm x Thickness 2.11mm x 6,650mm in length",
@@ -188,7 +188,7 @@ const MachineryPage = () => {
         },
         {
             title: "Process Pumps API-610",
-            image: "/about-us-cover.jpg",
+            image: "/mechinaries/process_pumps_api-610.jpg",
             details: [
                 "Applications: Petroleum Refinery and Petrochemical Industry",
                 "Capacity: 6 m³/min",
@@ -201,7 +201,7 @@ const MachineryPage = () => {
         },
         {
             title: "Cooling Water Pump API-610",
-            image: "/about-us-cover.jpg",
+            image: "/mechinaries/cooling_water_pump_api-610.jpg",
             details: [
                 "Applications: Boiler Feed Water, Processing Water, High Pressure Water",
                 "Capacity: 2.5 m³/min",
@@ -210,6 +210,61 @@ const MachineryPage = () => {
                 "Size: 100 mm",
                 "Country of Origin: South Korea",
                 "Manufacturer: CW- Hydro, Inc.",
+            ],
+        },
+        {
+            title: "UFO-ENV Non-Visible Flare (50 Nm3hr)",
+            image: "/mechinaries/UFO_ENV_Non_Visible_Flare.jpg",
+            details: [
+                "Stainless Steel Construction",
+                "Approx 850 deg C",
+                "Integrated Safety System",
+                "Latest PLC Controlled Operation",
+                "Compatible with SCADA Control",
+                "Leading Cyclonic Burner Technology",
+                "Gas Pressure Protection",
+                "IS Barriers",
+                "Local Isolators",
+                "Flush Back Protected Flame Arrestor",
+                "Pressure and Temperature Monitoring",
+                "Pneumatic Slam Shut Operation",
+                "Country of Origin: UK",
+                "Manufacturer: Uniflare Ltd."
+            ],
+        },
+        {
+            title: "FRP Cooling Tower (MODEL No: SA 032)",
+            image: "/mechinaries/FRP_Cooling_Tower.jpg",
+            details: [
+                "Country of Origin: India",
+                "Manufacturer: Towertech Cooling Systems Pvt ltd. "
+
+            ],
+        },
+        {
+            title: "Diesel Generator, 400 KVA",
+            image: "/mechinaries/Diesel_Generator.jpg",
+            details: [
+                "Brand: FW Wilson",
+                "Supplied By: Energypac Power Generation Ltd.",
+                "Model: P400-3",
+                "Rating: Prime 350.0 kVA /280.0 kW",
+                "Rating: Standby 400.0 kVA /320.0 kW",
+                "Voltage: 380-415 Volts",
+                "Phase: 3",
+                "Frequency: 50 Hz",
+                "Engine Operating Speed: 1500 rpm at NTP conditions",
+                "Diesel Engine: Perkins",
+                "Class: ISO 8528 G2",
+                "No of Cylinder / Alignment: 6 in line",
+                "Cycle: 4 Strokes",
+                "Fuel Tank Capacity: 888 Litres",
+                "Fuel Consumption: 59.3 L/hr @ 75% load",
+                "Alternator Model: EG315M-280N",
+                "Insulation Class: H",
+                "Base Frame Type: Heavy Duty Fabricated Steel",
+                "Battery: 24 volt",
+                "Cooling System: Water Cooled"
             ],
         },
     ];
