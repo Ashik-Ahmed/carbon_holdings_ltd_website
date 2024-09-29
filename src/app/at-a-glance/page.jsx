@@ -68,10 +68,10 @@ const Timeline = () => (
                 <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-primary opacity-40"></div>
                 <TimelineItem year="2016" event="Establishment of Carbon Holdings Ltd" side="left" />
                 <TimelineItem year="2016" event="Construction of fractionation plant begins" side="right" />
-                <TimelineItem year="2017" event="Plant becomes operational" side="left" />
-                <TimelineItem year="2018" event="Reached full production capacity" side="right" />
-                <TimelineItem year="2020" event="Expanded workforce to 50 employees" side="left" />
-                <TimelineItem year="2023" event="Received permission for resource imports" side="right" />
+                {/* <TimelineItem year="2017" event="Plant becomes operational" side="left" /> */}
+                <TimelineItem year="2018" event="Reached full production capacity & plant becomes operational" side="left" />
+                <TimelineItem year="2019" event="Expanded workforce to 50 employees" side="right" />
+                <TimelineItem year="2023" event="Received permission for resource imports" side="left" />
             </div>
         </div>
     </section>

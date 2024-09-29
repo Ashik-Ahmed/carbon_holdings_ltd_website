@@ -4,7 +4,7 @@ import { Facebook, Twitter, Linkedin } from 'lucide-react'
 
 const Footer = () => {
     return (
-        <footer className="bg-primary text-white">
+        <footer className="bg-secondary text-white">
             <div className="container mx-auto px-6 py-8">
                 <div className="flex flex-wrap justify-between items-center">
                     <div className="w-full md:w-1/3 text-center md:text-left">
@@ -12,7 +12,7 @@ const Footer = () => {
                         <p className="text-sm">Transforming energy for a sustainable future</p>
                     </div>
                     <div className="w-full md:w-1/3 text-center my-4 md:my-0">
-                        <p className="text-sm">&copy; 2023 Carbon Holdings Ltd. All rights reserved.</p>
+                        <p className="text-sm">&copy; {new Date().getFullYear()} Carbon Holdings Ltd. All rights reserved.</p>
                     </div>
                     <div className="w-full md:w-1/3 flex justify-center md:justify-end space-x-4">
                         <SocialIcon icon={<Facebook size={20} />} href="#" />

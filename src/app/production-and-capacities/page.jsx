@@ -347,7 +347,7 @@ const ProductionCapacitiesPage = () => {
                             <div className="w-full" ref={ref}>
                                 {
                                     inView && (
-                                        <div className='flex items-center justify-center p-4'>
+                                        <div className='md:flex items-center justify-center p-4'>
                                             <ResponsiveContainer width="100%" height={400} className={''}>
                                                 <PieChart>
                                                     <Pie
@@ -369,7 +369,7 @@ const ProductionCapacitiesPage = () => {
                                                     <Tooltip />
                                                 </PieChart>
                                                 <div className='text-center'>
-                                                    <p className='italic underline'>Fig: Product Yield pattern- Natural gas condensate</p>
+                                                    <p className='italic bg-secondary rounded-md w-fit mx-auto p-1 text-white'>Fig: Product Yield pattern- Natural gas condensate</p>
                                                 </div>
                                             </ResponsiveContainer>
 
@@ -394,7 +394,7 @@ const ProductionCapacitiesPage = () => {
                                                     <Tooltip />
                                                 </PieChart>
                                                 <div className='text-center'>
-                                                    <p className='italic underline'>Fig: Product Yield pattern- Diesel riched condensate</p>
+                                                    <p className='italic bg-secondary rounded-md w-fit mx-auto p-1 text-white'>Fig: Product Yield pattern- Diesel riched condensate</p>
                                                 </div>
                                             </ResponsiveContainer>
                                         </div>
