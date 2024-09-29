@@ -23,7 +23,7 @@ const Header2 = () => {
             submenu: [
                 { label: 'Machineries', link: '/plant/machineries' },
                 { label: 'Lab & Testing Facilities', link: '/plant/lab-facilities' },
-                { label: 'Firefighting Equipments', link: '/plant/firefighting-equipments' },
+                { label: 'Firefighting Equipments', link: '/plant/firefighting-equipment' },
             ]
         },
         {
@@ -42,7 +42,7 @@ const Header2 = () => {
             submenu: [
                 { label: 'Company Details', link: '/about/company-details' },
                 { label: 'Our Team', link: '/about/our-team' },
-                { label: 'Organogram', link: '/about/organogram' },
+                // { label: 'Organogram', link: '/about/organogram' },
                 { label: 'At a Glance', link: '/about/at-a-glance' },
             ]
         },
