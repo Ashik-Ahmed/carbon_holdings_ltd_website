@@ -92,7 +92,7 @@ const MachineItem = ({ title, image, details, index }) => {
                         alt={title}
                         width={500}
                         height={500}
-                        className="w-[600px] h-[450px] object-cover rounded-lg shadow-lg"
+                        className="w-[600px] h-[450px] object-contain bg-white rounded-lg shadow-lg"
                     />
                 </motion.div>
                 <motion.div

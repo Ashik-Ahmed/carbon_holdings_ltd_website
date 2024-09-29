@@ -19,14 +19,20 @@ const ProductionCapacitiesPage = () => {
         transition: { duration: 0.5 }
     };
 
-    const productionRatioData = [
+    const dieselProductionRatio = [
         { name: 'MS', value: 75 },
         { name: 'MTT', value: 7 },
         { name: 'HSD', value: 16 },
-        { name: 'Process Loss', value: 2 },
+        { name: 'Process Loss', value: 2 }
     ];
 
-    const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
+    const naturalGasProductionRatio = [
+        { name: 'HSD', value: 98 },
+        { name: 'Process Loss', value: 2 }
+    ];
+
+    const dieselChartColors = ['#0088FE', '#00C49F', '#FFBB28', '#FF0000'];
+    const naturalGasChartColors = ['#FFBB28', '#FF0000'];
 
     const dieselCondensateSpec = [
         { sl: "01", test: "Density@15°C", method: "ASTM D4052", unit: "KG/l", limit: "0.80-0.86" },
@@ -258,9 +264,9 @@ const ProductionCapacitiesPage = () => {
                         <li>Mineral Turpentine (MTT)</li>
                         <li>Kerosene (SKO)</li>
                     </ul> */}
-                    <div className='md:grid md:grid-cols-2 md:gap-12'>
-                        <div>
-                            <h3 className="text-xl font-semibold mb-2 border-b-2 pb-2 border-primary">Production Capacity</h3>
+                    <div>
+                        <div className='mb-12'>
+                            <h3 className="w-fit text-xl font-semibold mb-2 border-b-2 pb-2 border-primary">Production Capacity</h3>
                             <ul className="list-disc list-inside mb-4">
                                 <div className='flex items-start gap-x-4'>
                                     <svg
@@ -337,36 +343,64 @@ const ProductionCapacitiesPage = () => {
                             </ul>
                         </div>
                         <div>
-                            <h3 className="text-xl font-semibold mb-2 border-b-2 pb-2 border-primary">Production Ratio</h3>
+                            <h3 className="w-fit text-xl font-semibold mb-2 border-b-2 pb-2 border-primary">Production Ratio</h3>
                             <div className="w-full" ref={ref}>
                                 {
                                     inView && (
-                                        <ResponsiveContainer width="100%" height={400}>
-                                            <PieChart>
-                                                <Pie
-                                                    data={productionRatioData}
-                                                    cx="50%"
-                                                    cy="50%"
-                                                    labelLine={false}
-                                                    innerRadius={80}
-                                                    outerRadius={120}
-                                                    paddingAngle={2}
-                                                    fill="#8884d8"
-                                                    dataKey="value"
-                                                    label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
-                                                >
-                                                    {productionRatioData.map((entry, index) => (
-                                                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                                                    ))}
-                                                </Pie>
-                                                <Tooltip />
-                                            </PieChart>
-                                        </ResponsiveContainer>
+                                        <div className='flex items-center justify-center p-4'>
+                                            <ResponsiveContainer width="100%" height={400} className={''}>
+                                                <PieChart>
+                                                    <Pie
+                                                        data={dieselProductionRatio}
+                                                        cx="50%"
+                                                        cy="50%"
+                                                        labelLine={false}
+                                                        innerRadius={80}
+                                                        outerRadius={120}
+                                                        paddingAngle={2}
+                                                        fill="#8884d8"
+                                                        dataKey="value"
+                                                        label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                                                    >
+                                                        {dieselProductionRatio.map((entry, index) => (
+                                                            <Cell key={`cell-${index}`} fill={dieselChartColors[index % dieselChartColors.length]} />
+                                                        ))}
+                                                    </Pie>
+                                                    <Tooltip />
+                                                </PieChart>
+                                                <div className='text-center'>
+                                                    <p className='italic underline'>Fig: Product Yield pattern- Natural gas condensate</p>
+                                                </div>
+                                            </ResponsiveContainer>
+
+                                            <ResponsiveContainer width="100%" height={400}>
+                                                <PieChart>
+                                                    <Pie
+                                                        data={naturalGasProductionRatio}
+                                                        cx="50%"
+                                                        cy="50%"
+                                                        labelLine={false}
+                                                        innerRadius={80}
+                                                        outerRadius={120}
+                                                        paddingAngle={2}
+                                                        fill="#8884d8"
+                                                        dataKey="value"
+                                                        label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                                                    >
+                                                        {naturalGasProductionRatio.map((entry, index) => (
+                                                            <Cell key={`cell-${index}`} fill={naturalGasChartColors[index % naturalGasChartColors.length]} />
+                                                        ))}
+                                                    </Pie>
+                                                    <Tooltip />
+                                                </PieChart>
+                                                <div className='text-center'>
+                                                    <p className='italic underline'>Fig: Product Yield pattern- Diesel riched condensate</p>
+                                                </div>
+                                            </ResponsiveContainer>
+                                        </div>
                                     )
                                 }
-                                <div className='text-center'>
-                                    <p className='italic underline'>Fig: Product Yield pattern- Natural gas condensate</p>
-                                </div>
+
                             </div>
                         </div>
                     </div>
