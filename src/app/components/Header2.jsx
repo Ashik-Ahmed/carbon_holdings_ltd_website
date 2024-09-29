@@ -33,7 +33,7 @@ const Header2 = () => {
                 { label: 'Processing & Storage Unit', link: '/production-capacity/processing-storage-unit' },
                 { label: 'Our Products', link: '/production-capacity/products' },
                 { label: 'Production Ratio', link: '/production-capacity/production-ratio' },
-                { label: 'Raw Material Specs', link: '/production-capacity/raw-material-specs' },
+                { label: 'Raw Material Specifications', link: '/production-capacity/raw-material-specifications' },
             ]
         },
         {
