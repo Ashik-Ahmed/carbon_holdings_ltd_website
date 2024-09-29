@@ -12,7 +12,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Carbon Holdings Ltd',
   icons: {
-    icon: '/chl-icon-logo.ico', // Ensure the path is correct
+    icon: '/chl-icon-logo.ico',
   },
 };
 
@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className} bg-gray-50 text-gray-900`}>
-        <Header />
+        <Header2 />
         {/* <motion.main
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

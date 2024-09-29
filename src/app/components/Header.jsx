@@ -42,23 +42,6 @@ const Header = () => {
                             <NavItem href="/" icon={<Home size={18} />} onClick={closeMenu} className={`${currentPath == '/' && 'border-b-4 border-primary text-primary transition-color duration-300 px-2'}`}>
                                 Home
                             </NavItem>
-                            {/* Parent menu item "The Plant" with submenu */}
-                            <div className="relative group">
-                                {/* The Plant main menu */}
-                                <div className="flex items-center px-2 cursor-pointer group-hover:text-primary">
-                                    <span className="mr-2">The Plant</span>
-                                    <ChevronDown size={18} className="text-primary" />
-                                </div>
-                                {/* Submenu that appears on hover */}
-                                <div className="absolute left-0 w-48 bg-white shadow-lg rounded-lg z-30 hidden group-hover:flex flex-col" onMouseEnter={() => setIsMenuOpen(true)} onMouseLeave={() => setIsMenuOpen(false)}>
-                                    <NavItem href="/machineries" icon={<Cog size={18} />} onClick={closeMenu} className={`${currentPath == '/machineries' && 'text-primary'}`}>
-                                        Machineries
-                                    </NavItem>
-                                    <NavItem href="/firefighting-equipments" icon={<Cog size={18} />} onClick={closeMenu} className={`${currentPath == '/firefighting-equipments' && 'text-primary'}`}>
-                                        Firefighting Equipments
-                                    </NavItem>
-                                </div>
-                            </div>
                             <NavItem href="/production-and-capacities" icon={<TrendingUp size={18} />} onClick={closeMenu} className={`${currentPath == '/production-and-capacities' && 'border-b-4 border-primary text-primary transition-color duration-300 px-2'}`}>
                                 Capacity
                             </NavItem>

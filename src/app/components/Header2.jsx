@@ -21,29 +21,29 @@ const Header2 = () => {
             icon: <Factory size={20} />,
             label: 'The Plant',
             submenu: [
-                { label: 'Machineries', link: '/machineries' },
-                { label: 'Lab & Testing Facilities', link: '/lab-facilities' },
-                { label: 'Firefighting Equipments', link: '/firefighting-equipments' },
+                { label: 'Machineries', link: '/plant/machineries' },
+                { label: 'Lab & Testing Facilities', link: '/plant/lab-facilities' },
+                { label: 'Firefighting Equipments', link: '/plant/firefighting-equipments' },
             ]
         },
         {
             icon: <TrendingUp size={20} />,
             label: 'Production & Capacities',
             submenu: [
-                { label: 'Processing & Storage Unit', link: '/processing-and-storage' },
-                { label: 'Our Products', link: '/products' },
-                { label: 'Production Ratio', link: '/production-ratio' },
-                { label: 'Raw Material Specs', link: '/raw-material-specs' },
+                { label: 'Processing & Storage Unit', link: '/production-capacity/processing-storage-unit' },
+                { label: 'Our Products', link: '/production-capacity/products' },
+                { label: 'Production Ratio', link: '/production-capacity/production-ratio' },
+                { label: 'Raw Material Specs', link: '/production-capacity/raw-material-specs' },
             ]
         },
         {
             icon: <Info size={20} />,
             label: 'About Us',
             submenu: [
-                { label: 'Company Details', link: '/company-details' },
-                { label: 'Our Team', link: '/our-team' },
-                { label: 'Organogram', link: '/organogram' },
-                { label: 'At a Glance', link: '/at-a-glance' },
+                { label: 'Company Details', link: '/about/company-details' },
+                { label: 'Our Team', link: '/about/our-team' },
+                { label: 'Organogram', link: '/about/organogram' },
+                { label: 'At a Glance', link: '/about/at-a-glance' },
             ]
         },
         { icon: <Phone size={20} />, label: 'Contact', link: '/contact' },
