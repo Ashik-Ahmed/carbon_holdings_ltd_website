@@ -42,9 +42,9 @@ export default function OurTeam() {
                     <img
                         src="/organogram.png"
                         alt="Organogram"
-                        width={700}
-                        height={600}
-                        className=" mx-auto w-[70%] h-auto object-contain object-center"
+                        width={800}
+                        height={700}
+                        className=" mx-auto w-[80%] h-auto object-contain object-center"
                     />
                 </div>
             </div>
