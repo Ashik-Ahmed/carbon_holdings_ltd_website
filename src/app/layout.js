@@ -33,6 +33,7 @@ export default function RootLayout({
         </motion.main> */}
         <main>
           {children}
+          <Analytics />
         </main>
         <Footer />
       </body>
