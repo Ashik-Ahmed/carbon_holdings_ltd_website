@@ -31,7 +31,7 @@ export default function FirefightingEquipment() {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.2 }}
                     >
-                        Our Firefighting Equipment
+                        Safety & Firefighting Equipment
                     </motion.h1>
                     <motion.p
                         className="text-xl text-center text-gray-700 mb-12 max-w-3xl mx-auto"
