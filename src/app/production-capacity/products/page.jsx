@@ -3,8 +3,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
-import { Droplet, Fuel, SquareCheck, Truck, Zap } from "lucide-react";
+import { ChevronRight, Droplet, Fuel, SquareCheck, Truck, Zap } from "lucide-react";
 import { useInView } from 'react-intersection-observer';
+import Link from 'next/link';
 
 const Products = () => {
 
@@ -49,7 +50,12 @@ const Products = () => {
 export const ProductionDetails = () => (
     <section className="py-20 bg-primary text-white">
         <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-bold text-center mb-12 border-b-2 border-white w-fit mx-auto">Our Products</h2>
+            <h2 className="text-4xl font-bold text-center mb-12 border-b-2 border-white w-fit mx-auto">Our Products</h2>
+            <div className="my-12 text-center">
+                <p className="text-gray-200 mb-4">
+                    As per agreements, a portion of the produced MS and HSD is supplied to the Bangladesh Petroleum Corporation (BPC). However, non-fuel products like MTT can be openly distributed in the local market, providing a valuable resource for various industries.
+                </p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <ProductCard
                     icon={<Droplet size={40} />}
@@ -73,19 +79,22 @@ export const ProductionDetails = () => (
                 />
             </div>
         </div>
-        <div className="mt-12 text-center">
-            <p className="text-gray-200 mb-4">
-                As per agreements, a portion of the produced MS and HSD is supplied to the Bangladesh Petroleum Corporation (BPC). However, non-fuel products like MTT can be openly distributed in the local market, providing a valuable resource for various industries.
-            </p>
-        </div>
     </section >
 )
 
 const ProductCard = ({ icon, title, description }) => (
-    <div className="p-4 rounded-lg bg-secondary hover:bg-tertiary transition-color duration-300">
-        <div className="text-white mb-4">{icon}</div>
-        <h3 className="text-xl font-semibold mb-2  text-white">{title}</h3>
-        <p className="text-gray-200 ">{description}</p>
+    <div className="p-4 rounded-lg bg-secondary hover:scale-105 transition-color duration-300 flex flex-col justify-between h-full">
+        <div>
+            <div className="text-white mb-4">{icon}</div>
+            <h3 className="text-xl font-semibold mb-2 text-white">{title}</h3>
+            <p className="text-gray-200">{description}</p>
+        </div>
+        <div className="mt-4">
+            <Link href="/production-capacity/products" className="w-fit text-primary bg-white border rounded-full px-4 py-2 font-medium hover:underline flex items-center transition-transform">
+                Learn More
+                <ChevronRight className="ml-2" />
+            </Link>
+        </div>
     </div>
 )
 

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from 'framer-motion'
-import { Droplet, Zap, Truck, BarChart, Globe, Award, Fuel } from 'lucide-react'
+import { Droplet, Zap, Truck, BarChart, Globe, Award, Fuel, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Slider from 'react-slick'
@@ -138,11 +138,17 @@ const Products = () => (
 
 const ProductCard = ({ icon, title, description }) => (
   <div
-    className="p-6 border border-gray-200 rounded-lg hover:border-primary transition-all duration-300 transform hover:scale-105"
+    className="p-6 border border-gray-200 rounded-lg hover:border-primary transition-all duration-300 transform hover:scale-105 flex flex-col justify-between h-full"
   >
     <div className="text-primary mb-4">{icon}</div>
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p className="text-gray-600">{description}</p>
+    <div className="mt-4">
+      <Link href="/production-capacity/products" className="w-fit text-white bg-primary border rounded-full px-4 py-2 font-medium hover:underline flex items-center transition-transform">
+        Learn More
+        <ChevronRight className="ml-2" />
+      </Link>
+    </div>
   </div>
 )
 
