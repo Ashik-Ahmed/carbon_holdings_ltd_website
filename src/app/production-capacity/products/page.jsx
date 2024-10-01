@@ -194,61 +194,61 @@ const productsData = [
         description: "7% of our production, available for open market distribution",
         mttSpecifications: [
             {
-                slNo: 1,
+                slNo: "01",
                 characteristics: "Appearance, at ambient temperature",
                 requirements: { value: "Clear, bright and free of impurities", colspan: 2 },
                 methodsOfTest: { bds: "Visual", astm: "-", ip: "-" }
             },
             {
-                slNo: 2,
+                slNo: "02",
                 characteristics: "Undissolved water",
                 requirements: { value: "Absent", colspan: 2 },
                 methodsOfTest: { bds: "-", astm: "D 4176\nD 4860\nD 6304", ip: "-" }
             },
             {
-                slNo: 3,
+                slNo: "03",
                 characteristics: "Aromatic content, % (v/v)",
                 requirements: { minimum: "15", maximum: "40" },
                 methodsOfTest: { bds: "-", astm: "D 1319\nD 6730", ip: "-" }
             },
             {
-                slNo: 4,
+                slNo: "04",
                 characteristics: "Colour, Saybolt",
                 requirements: { minimum: "+20", maximum: "-" },
                 methodsOfTest: { bds: "p-2", astm: "D 156", ip: "-" }
             },
             {
-                slNo: 5,
+                slNo: "05",
                 characteristics: "Copper strip corrosion, 100°C, 3 hours",
                 requirements: { minimum: "-", maximum: "1b" },
                 methodsOfTest: { bds: "p-6", astm: "D 130", ip: "-" }
             },
             {
-                slNo: 6,
+                slNo: "06",
                 characteristics: "Density at 15°C, Kg/L",
                 requirements: { minimum: "0.77", maximum: "0.82" },
                 methodsOfTest: { bds: "p-1", astm: "D 4052\nD 1298", ip: "-" }
             },
             {
-                slNo: 7,
+                slNo: "07",
                 characteristics: "Distillation, °C\nInitial boiling Point\nFinal boiling Point",
                 requirements: { minimum: "135\n-", maximum: "-\n215" },
                 methodsOfTest: { bds: "-", astm: "D 86(3)", ip: "-" }
             },
             {
-                slNo: 8,
+                slNo: "08",
                 characteristics: "Flash point (Abel closed cup), °C",
                 requirements: { minimum: "28", maximum: "-" },
                 methodsOfTest: { bds: "p-29", astm: "-", ip: "170" }
             },
             {
-                slNo: 9,
+                slNo: "09",
                 characteristics: "Unwashed gum content, mg/100 mL",
                 requirements: { minimum: "-", maximum: "5" },
                 methodsOfTest: { bds: "P-12", astm: "D 381", ip: "-" }
             },
             {
-                slNo: 10,
+                slNo: "10",
                 characteristics: "Doctor test",
                 requirements: { value: "-ve", colspan: 2 },
                 methodsOfTest: { bds: "p-14", astm: "D 4952", ip: "-" }
@@ -259,7 +259,98 @@ const productsData = [
         icon: <Fuel size={40} />,
         title: "Kerosene (SKO)",
         description: "Lightweight fuel for use in low-temperature applications",
-        details: "Detailed information about Kerosene (SKO)..."
+        keroseneSpecifications: [
+            {
+                slNo: "01",
+                characteristics: "Appearance",
+                requirements: "Bright and Clear",
+                methodOfTest: {
+                    bds: "Visual",
+                    ip: "-",
+                    astm: "-"
+                }
+            },
+            {
+                slNo: "02",
+                characteristics: "Density at 15°C kg/L",
+                requirements: "Not limited but to be reported",
+                methodOfTest: {
+                    bds: "Part -1",
+                    ip: "160",
+                    astm: "D 1298\nD 4052"
+                }
+            },
+            {
+                slNo: "03",
+                characteristics: "Colour (Saybolt), Min.",
+                requirements: "+10",
+                methodOfTest: {
+                    bds: "Part-2",
+                    ip: "-",
+                    astm: "D 156"
+                }
+            },
+            {
+                slNo: "04",
+                characteristics: "Char value, mg/kg of oil consumed, Max",
+                requirements: "20",
+                methodOfTest: {
+                    bds: "-",
+                    ip: "10",
+                    astm: "-"
+                }
+            },
+            {
+                slNo: "05",
+                characteristics: "Flash point (Abel), °C, Min.",
+                requirements: "38",
+                methodOfTest: {
+                    bds: "Part – 4",
+                    ip: "170",
+                    astm: "-"
+                }
+            },
+            {
+                slNo: "06",
+                characteristics: "Smoke point, mm, Min.",
+                requirements: "25",
+                methodOfTest: {
+                    bds: "Part-5",
+                    ip: "57",
+                    astm: "D 1322"
+                }
+            },
+            {
+                slNo: "07",
+                characteristics: "Copper strip Corrosion for 3 hours at 100°C",
+                requirements: "Not worse than No.1",
+                methodOfTest: {
+                    bds: "Part – 6",
+                    ip: "154",
+                    astm: "D 130"
+                }
+            },
+            {
+                slNo: "08",
+                characteristics: "Distillation:\na) Percent recovered at 200°C, Min.\nb) Final boiling point at 290°C, Max.",
+                requirements: "15\n\n95",
+                methodOfTest: {
+                    bds: "Part – 7",
+                    ip: "123",
+                    astm: "D 86"
+                }
+            },
+            {
+                slNo: "09",
+                characteristics: "Total Sulphur, percent by mass, Max.",
+                requirements: "0.15",
+                methodOfTest: {
+                    bds: "Part – 8",
+                    ip: "107",
+                    astm: "D 1266\nD 4045\nD 4294"
+                }
+            }
+        ]
     }
 ];
 
@@ -267,6 +358,7 @@ const ProductionDetails = () => {
     const [selectedProduct, setSelectedProduct] = useState(null);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [isMTTModalOpen, setIsMTTModalOpen] = useState(false);
+    const [isKerosineModalOpen, setIsKerosineModalOpen] = useState(false);
 
     const openModal = (product) => {
         setSelectedProduct(product);
@@ -278,9 +370,15 @@ const ProductionDetails = () => {
         setIsMTTModalOpen(true);
     };
 
+    const openKerosineModal = (product) => {
+        setSelectedProduct(product);
+        setIsKerosineModalOpen(true);
+    };
+
     const closeModal = () => {
         setIsModalOpen(false);
         setIsMTTModalOpen(false);
+        setIsKerosineModalOpen(false);
         setSelectedProduct(null);
     };
 
@@ -322,12 +420,12 @@ const ProductionDetails = () => {
                         description="7% of our production, available for open market distribution"
                         onLearnMore={() => openMTTModal(productsData[2])}
                     />
-                    {/* <ProductCard
+                    <ProductCard
                         icon={<Fuel size={40} />}
                         title="Kerosene (SKO)"
                         description="Lightweight fuel for use in low-temperature applications"
-                        onLearnMore={() => openModal(productsData[3])}
-                    /> */}
+                        onLearnMore={() => openKerosineModal(productsData[3])}
+                    />
                 </div>
             </div>
 
@@ -338,6 +436,11 @@ const ProductionDetails = () => {
                 {
                     isMTTModalOpen && (
                         <MTTModal product={selectedProduct} onClose={closeModal} />
+                    )
+                }
+                {
+                    isKerosineModalOpen && (
+                        <KerosineModal product={selectedProduct} onClose={closeModal} />
                     )
                 }
             </AnimatePresence>
@@ -382,7 +485,7 @@ const Modal = ({ product, onClose }) => (
                     X
                 </button>
             </div>
-            <p className="mb-4">{product.description}</p>
+            {/* <p className="mb-4">{product.description}</p> */}
 
 
             <div className="container mx-auto rounded-lg">
@@ -392,7 +495,7 @@ const Modal = ({ product, onClose }) => (
                             <tr>
                                 {
                                     product?.tableHeaders?.map((header, index) => (
-                                        <th key={index} className="px-4 py-2 text-left">{header}</th>
+                                        <th key={index} className="px-4 py-2 text-left border border-gray-300">{header}</th>
                                     ))
                                 }
                             </tr>
@@ -404,19 +507,19 @@ const Modal = ({ product, onClose }) => (
                                         spec.test.map((title, subIndex) => (
                                             <tr key={subIndex} className={`${subIndex % 2 === 0 ? 'bg-primary bg-opacity-10' : ''} border hover:bg-primary hover:bg-opacity-30`}>
                                                 {subIndex === 0 && (
-                                                    <td className="px-4 py-2" rowSpan={spec.test.length}>{spec.sl_no}</td>
+                                                    <td className="px-4 py-2 border border-gray-300" rowSpan={spec.test.length}>{spec.sl_no}</td>
                                                 )}
-                                                <td className="px-4 py-2">{title}</td>
-                                                <td className="px-4 py-2">{spec.method[subIndex]}</td>
-                                                <td className="px-4 py-2">{spec.limit[subIndex]}</td>
+                                                <td className="px-4 py-2 border border-gray-300">{title}</td>
+                                                <td className="px-4 py-2 border border-gray-300">{spec.method[subIndex]}</td>
+                                                <td className="px-4 py-2 border border-gray-300">{spec.limit[subIndex]}</td>
                                             </tr>
                                         ))
                                     ) : (
                                         <tr className={`${index % 2 === 0 ? 'bg-primary bg-opacity-10' : ''} border hover:bg-primary hover:bg-opacity-30`}>
-                                            <td className="px-4 py-2">{spec.sl_no}</td>
-                                            <td className="px-4 py-2">{spec.test}</td>
-                                            <td className="px-4 py-2">{spec.method}</td>
-                                            <td className="px-4 py-2">{spec.limit}</td>
+                                            <td className="px-4 py-2 border border-gray-300">{spec.sl_no}</td>
+                                            <td className="px-4 py-2 border border-gray-300">{spec.test}</td>
+                                            <td className="px-4 py-2 border border-gray-300">{spec.method}</td>
+                                            <td className="px-4 py-2 border border-gray-300">{spec.limit}</td>
                                         </tr>
                                     )}
                                 </React.Fragment>
@@ -449,19 +552,19 @@ const MTTModal = ({ product, onClose }) => (
                     X
                 </button>
             </div>
-            <p className="mb-4">{product.description}</p>
+            {/* <p className="mb-4">{product.description}</p> */}
 
             <div className="container mx-auto rounded-lg">
                 <div className="overflow-x-auto">
                     <table className="min-w-full bg-white border border-gray-300">
                         <thead>
-                            <tr className="bg-gray-100">
-                                <th className="border border-gray-300 px-4 py-2">Sl. No.</th>
+                            <tr className="bg-secondary text-white">
+                                <th className="border-r border-gray-300 px-4 py-2">Sl. No.</th>
                                 <th className="border border-gray-300 px-4 py-2">Characteristics</th>
                                 <th className="border border-gray-300 px-4 py-2" colSpan={2}>Requirements</th>
                                 <th className="border border-gray-300 px-4 py-2" colSpan={3}>Methods of Test</th>
                             </tr>
-                            <tr className="bg-gray-100">
+                            <tr className="bg-secondary text-white">
                                 <th className="border border-gray-300 px-4 py-2"></th>
                                 <th className="border border-gray-300 px-4 py-2"></th>
                                 <th className="border border-gray-300 px-4 py-2">Minimum</th>
@@ -472,8 +575,8 @@ const MTTModal = ({ product, onClose }) => (
                             </tr>
                         </thead>
                         <tbody>
-                            {product?.mttSpecifications.map((spec) => (
-                                <tr key={spec.slNo}>
+                            {product?.mttSpecifications.map((spec, index) => (
+                                <tr key={spec.slNo} className={`${index % 2 === 0 ? 'bg-primary bg-opacity-10' : ''} border hover:bg-primary hover:bg-opacity-30`}>
                                     <td className="border border-gray-300 px-4 py-2">{spec.slNo}</td>
                                     <td className="border border-gray-300 px-4 py-2 whitespace-pre-line">{spec.characteristics}</td>
                                     {('value' in spec.requirements) ? (
@@ -487,6 +590,66 @@ const MTTModal = ({ product, onClose }) => (
                                     <td className="border border-gray-300 px-4 py-2">{spec.methodsOfTest.bds}</td>
                                     <td className="border border-gray-300 px-4 py-2 whitespace-pre-line">{spec.methodsOfTest.astm}</td>
                                     <td className="border border-gray-300 px-4 py-2">{spec.methodsOfTest.ip}</td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </motion.div>
+    </motion.div >
+);
+const KerosineModal = ({ product, onClose }) => (
+    <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50"
+    >
+        <motion.div
+            initial={{ scale: 0.8 }}
+            animate={{ scale: 1 }}
+            exit={{ scale: 0.8 }}
+            className="bg-white text-gray-800 rounded-lg p-6 w-[90vw] h-[80vh] mx-4 md:mx-auto overflow-y-scroll"
+        >
+            <div className='flex justify-between items-start'>
+                <h2 className="w-fit text-2xl font-semibold mb-4 border-b-2 pb-2 border-primary">{product.title}</h2>
+
+                <button onClick={onClose} className="text-primary bg-white border border-primary rounded-full px-4 py-2 font-medium hover:bg-secondary hover:text-white transition-colors ease-in duration-200">
+                    X
+                </button>
+            </div>
+            {/* <p className="mb-4">{product.description}</p> */}
+
+            <div className="container mx-auto rounded-lg">
+                <div className="overflow-x-auto">
+                    <table className="min-w-full bg-white border border-gray-300">
+                        <thead>
+                            <tr className="bg-secondary text-white">
+                                <th className="border-r px-4 py-2">Sl.No.</th>
+                                <th className="border-r px-4 py-2">Characteristics</th>
+                                <th className="border-r px-4 py-2">Requirements</th>
+                                <th className="border border-gray-300 px-4 py-2" colSpan={3}>Method of test Ref. to</th>
+                            </tr>
+                            <tr className="bg-secondary text-white">
+                                <th className="border-r px-4 py-2"></th>
+                                <th className="border-r px-4 py-2"></th>
+                                <th className="border-r px-4 py-2"></th>
+                                <th className="border border-gray-300 px-4 py-2">Part of BDS 1320</th>
+                                <th className="border border-gray-300 px-4 py-2">IP</th>
+                                <th className="border border-gray-300 px-4 py-2">ASTM</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {product?.keroseneSpecifications.map((spec, index) => (
+                                <tr key={spec.slNo} className={`${index % 2 === 0 ? 'bg-primary bg-opacity-10' : ''} border hover:bg-primary hover:bg-opacity-30`}>
+                                    <td className="border border-gray-300 px-4 py-2">{spec.slNo}</td>
+                                    <td className="border border-gray-300 px-4 py-2 whitespace-pre-line">{spec.characteristics}</td>
+                                    <td className="border border-gray-300 px-4 py-2 whitespace-pre-line">{spec.requirements}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{spec.methodOfTest.bds}</td>
+                                    <td className="border border-gray-300 px-4 py-2">{spec.methodOfTest.ip}</td>
+                                    <td className="border border-gray-300 px-4 py-2 whitespace-pre-line">{spec.methodOfTest.astm}</td>
                                 </tr>
                             ))}
                         </tbody>
