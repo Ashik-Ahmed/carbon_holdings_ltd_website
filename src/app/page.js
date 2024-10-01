@@ -85,7 +85,10 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
           className="bg-primary text-white font-bold py-2 px-4 rounded-full hover:bg-secondary transition-colors duration-200 animate-fadeIn">
-          <Link href="/about">Learn More</Link>
+          <Link href="/about/company-details" className="flex items-center">
+            Learn More
+            <ChevronRight className="ml-2" />
+          </Link>
         </motion.button>
       </div>
       <Slider {...settings} className="h-full">
@@ -110,27 +113,35 @@ const Products = () => (
   <section className="py-20 bg-gray-100">
     <div className="container mx-auto px-6">
       <h2 className="text-3xl font-bold text-center mb-8 border-b-2 border-primary w-fit mx-auto">Our Products</h2>
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <ProductCard
-          icon={<Droplet size={40} />}
-          title="Motor Spirit (MS)"
-          description="High-quality petrol for optimal engine performance"
-        />
-        <ProductCard
-          icon={<Zap size={40} />}
-          title="High-Speed Diesel (HSD)"
-          description="Efficient diesel fuel for heavy-duty applications"
-        />
-        <ProductCard
-          icon={<Truck size={40} />}
-          title="Mineral Turpentine (MTT)"
-          description="Versatile solvent for various industrial uses"
-        />
-        <ProductCard
+      <div>
+        <div className="my-2 w-full flex justify-end">
+          <Link href="/production-capacity/products" className="w-fit text-white bg-primary hover:bg-secondary border rounded-full px-4 py-2 font-medium hover:underline flex items-center transition-transform">
+            See All Products
+            <ChevronRight className="ml-2" />
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <ProductCard
+            icon={<Droplet size={40} />}
+            title="Motor Spirit (MS)"
+            description="High-quality petrol for optimal engine performance"
+          />
+          <ProductCard
+            icon={<Zap size={40} />}
+            title="High-Speed Diesel (HSD)"
+            description="Efficient diesel fuel for heavy-duty applications"
+          />
+          <ProductCard
+            icon={<Truck size={40} />}
+            title="Mineral Turpentine (MTT)"
+            description="Versatile solvent for various industrial uses"
+          />
+          {/* <ProductCard
           icon={<Fuel size={40} />}
           title="Kerosene (SKO)"
           description="Lightweight fuel for use in low-temperature applications"
-        />
+        /> */}
+        </div>
       </div>
     </div>
   </section>
@@ -138,17 +149,12 @@ const Products = () => (
 
 const ProductCard = ({ icon, title, description }) => (
   <div
-    className="p-6 border border-gray-200 rounded-lg hover:border-primary transition-all duration-300 transform hover:scale-105 flex flex-col justify-between h-full"
+    className="p-6 border border-gray-200 rounded-lg hover:border-primary transition-all duration-300 transform hover:scale-105"
   >
     <div className="text-primary mb-4">{icon}</div>
     <h3 className="text-xl font-semibold mb-2">{title}</h3>
     <p className="text-gray-600">{description}</p>
-    <div className="mt-4">
-      <Link href="/production-capacity/products" className="w-fit text-white bg-primary border rounded-full px-4 py-2 font-medium hover:underline flex items-center transition-transform">
-        Learn More
-        <ChevronRight className="ml-2" />
-      </Link>
-    </div>
+
   </div>
 )
 

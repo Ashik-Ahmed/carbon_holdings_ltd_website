@@ -54,7 +54,7 @@ const Header2 = () => {
             <div className="container mx-auto flex justify-between items-center">
                 <div>
                     <Link href="/" className="flex items-center">
-                        <Image src="/logo.png" alt="Logo" width={250} height={32} priority />
+                        <Image src="/logo.png" alt="Logo" width={250} height={32} priority quality={100} />
                     </Link>
                 </div>
                 {/* Desktop Menu */}
