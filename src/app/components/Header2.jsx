@@ -23,7 +23,7 @@ const Header2 = () => {
             submenu: [
                 { label: 'Machineries', link: '/plant/machineries' },
                 { label: 'Lab & Testing Facilities', link: '/plant/lab-facilities' },
-                { label: 'Firefighting Equipments', link: '/plant/firefighting-equipment' },
+                { label: 'Firefighting Equipment', link: '/plant/firefighting-equipment' },
             ]
         },
         {

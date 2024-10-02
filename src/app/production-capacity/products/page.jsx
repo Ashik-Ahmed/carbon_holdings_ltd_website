@@ -479,7 +479,7 @@ const Modal = ({ product, onClose }) => (
             className="bg-white text-gray-800 rounded-lg p-6 w-[90vw] h-[80vh] mx-4 md:mx-auto overflow-y-scroll"
         >
             <div className='flex justify-between items-start'>
-                <h2 className="w-fit text-2xl font-semibold mb-4 border-b-2 pb-2 border-primary">{product.title}</h2>
+                <h2 className="w-fit text-2xl font-semibold mb-4 border-b-2 pb-2 border-primary">Specifications of {product.title}</h2>
 
                 <button onClick={onClose} className="text-primary bg-white border border-primary rounded-full px-4 py-2 font-medium hover:bg-secondary hover:text-white transition-colors ease-in duration-200">
                     X
@@ -546,7 +546,7 @@ const MTTModal = ({ product, onClose }) => (
             className="bg-white text-gray-800 rounded-lg p-6 w-[90vw] h-[80vh] mx-4 md:mx-auto overflow-y-scroll"
         >
             <div className='flex justify-between items-start'>
-                <h2 className="w-fit text-2xl font-semibold mb-4 border-b-2 pb-2 border-primary">{product.title}</h2>
+                <h2 className="w-fit text-2xl font-semibold mb-4 border-b-2 pb-2 border-primary">Specifications of {product.title}</h2>
 
                 <button onClick={onClose} className="text-primary bg-white border border-primary rounded-full px-4 py-2 font-medium hover:bg-secondary hover:text-white transition-colors ease-in duration-200">
                     X
@@ -614,7 +614,7 @@ const KerosineModal = ({ product, onClose }) => (
             className="bg-white text-gray-800 rounded-lg p-6 w-[90vw] h-[80vh] mx-4 md:mx-auto overflow-y-scroll"
         >
             <div className='flex justify-between items-start'>
-                <h2 className="w-fit text-2xl font-semibold mb-4 border-b-2 pb-2 border-primary">{product.title}</h2>
+                <h2 className="w-fit text-2xl font-semibold mb-4 border-b-2 pb-2 border-primary">Specifications of {product.title}</h2>
 
                 <button onClick={onClose} className="text-primary bg-white border border-primary rounded-full px-4 py-2 font-medium hover:bg-secondary hover:text-white transition-colors ease-in duration-200">
                     X

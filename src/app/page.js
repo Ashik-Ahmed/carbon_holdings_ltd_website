@@ -78,7 +78,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-xl md:text-2xl mb-8"
         >
-          Innovative energy solutions for a sustainable future
+          Innovative Energy Solutions for a Sustainable Future
         </motion.p>
         <motion.button
           initial={{ opacity: 0, y: 20 }}

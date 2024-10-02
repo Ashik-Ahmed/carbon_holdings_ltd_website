@@ -150,7 +150,7 @@ const ProductionRatio = () => {
                                                     <Tooltip />
                                                 </PieChart>
                                                 <div className='text-center'>
-                                                    <p className='italic bg-secondary rounded-md w-fit mx-auto p-1 text-white'>Fig: Product Yield pattern- Natural gas condensate</p>
+                                                    <p className='italic bg-secondary rounded-md w-fit mx-auto p-1 text-white'>Product Yield Pattern - Natural Gas Condensate</p>
                                                 </div>
                                             </ResponsiveContainer>
 
@@ -175,7 +175,7 @@ const ProductionRatio = () => {
                                                     <Tooltip />
                                                 </PieChart>
                                                 <div className='text-center'>
-                                                    <p className='italic bg-secondary rounded-md w-fit mx-auto p-1 text-white'>Fig: Product Yield pattern- Diesel riched condensate</p>
+                                                    <p className='italic bg-secondary rounded-md w-fit mx-auto p-1 text-white'>Product Yield Pattern - Diesel Riched Condensate</p>
                                                 </div>
                                             </ResponsiveContainer>
                                         </div>
