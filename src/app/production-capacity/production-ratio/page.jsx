@@ -6,6 +6,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 import { Droplet, Fuel, SquareCheck, Truck, Zap } from "lucide-react";
 import { useInView } from 'react-intersection-observer';
 
+
 const ProductionRatio = () => {
 
     const { ref, inView } = useInView({
@@ -124,20 +125,20 @@ const ProductionRatio = () => {
                             </ul>
                         </div>
                         <div>
-                            <h3 className="w-fit text-xl font-semibold mb-2 border-b-2 pb-2 border-primary">Production Ratio</h3>
+                            <h3 className="w-fit text-xl font-semibold border-b-2 pb-2 border-primary">Production Ratio</h3>
                             <div className="w-full" ref={ref}>
                                 {
                                     inView && (
-                                        <div className='md:flex items-center justify-center p-4'>
-                                            <ResponsiveContainer width="100%" height={400} className={''}>
+                                        <div className='md:flex items-center justify-center pb-4'>
+                                            <ResponsiveContainer width="100%" aspect={1.5}>
                                                 <PieChart>
                                                     <Pie
                                                         data={dieselProductionRatio}
                                                         cx="50%"
                                                         cy="50%"
-                                                        labelLine={false}
-                                                        innerRadius={80}
-                                                        outerRadius={120}
+                                                        labelLine={true}
+                                                        innerRadius="40%"
+                                                        outerRadius="70%"
                                                         paddingAngle={2}
                                                         fill="#8884d8"
                                                         dataKey="value"
@@ -147,22 +148,22 @@ const ProductionRatio = () => {
                                                             <Cell key={`cell-${index}`} fill={dieselChartColors[index % dieselChartColors.length]} />
                                                         ))}
                                                     </Pie>
-                                                    <Tooltip />
+                                                    <Tooltip wrapperStyle={{ zIndex: 10 }} />
                                                 </PieChart>
                                                 <div className='text-center'>
-                                                    <p className='italic bg-secondary rounded-md w-fit mx-auto p-1 text-white'>Product Yield Pattern - Natural Gas Condensate</p>
+                                                    <p className='italic bg-secondary rounded-md w-fit mx-auto p-1 text-white text-sm'>Product Yield Pattern - Natural Gas Condensate</p>
                                                 </div>
                                             </ResponsiveContainer>
 
-                                            <ResponsiveContainer width="100%" height={400}>
+                                            <ResponsiveContainer width="100%" aspect={1.5}>
                                                 <PieChart>
                                                     <Pie
                                                         data={naturalGasProductionRatio}
                                                         cx="50%"
                                                         cy="50%"
-                                                        labelLine={false}
-                                                        innerRadius={80}
-                                                        outerRadius={120}
+                                                        labelLine={true}
+                                                        innerRadius="40%"
+                                                        outerRadius="70%"
                                                         paddingAngle={2}
                                                         fill="#8884d8"
                                                         dataKey="value"
@@ -175,7 +176,7 @@ const ProductionRatio = () => {
                                                     <Tooltip />
                                                 </PieChart>
                                                 <div className='text-center'>
-                                                    <p className='italic bg-secondary rounded-md w-fit mx-auto p-1 text-white'>Product Yield Pattern - Diesel Riched Condensate</p>
+                                                    <p className='italic bg-secondary rounded-md w-fit mx-auto p-1 text-white text-sm'>Product Yield Pattern - Diesel Riched Condensate</p>
                                                 </div>
                                             </ResponsiveContainer>
                                         </div>
