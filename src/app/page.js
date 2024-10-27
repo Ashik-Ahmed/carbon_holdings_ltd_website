@@ -92,9 +92,9 @@ const Hero = () => {
         </motion.button>
       </div>
       <Slider {...settings} className="h-full">
-        <div className="relative h-screen w-full">
+        {/* <div className="relative h-screen w-full">
           <Image src="/machineries-cover.jpg" alt="Carbon Holdings Facility" height={450} width={1024} className="w-full h-full object-cover" />
-        </div>
+        </div> */}
         <div className="relative h-screen w-full">
           <Image src="/site_pic3.jpg" alt="Motor Spirit Production" height={450} width={1024} className="w-full h-full object-cover" />
         </div>
