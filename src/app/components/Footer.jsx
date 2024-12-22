@@ -1,6 +1,7 @@
 "use client"
 
 import { Facebook, Twitter, Linkedin } from 'lucide-react'
+import Link from 'next/link'
 
 const Footer = () => {
     return (
@@ -21,8 +22,8 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
-            <div className='w-full'>
-                <p className='text-center text-sm font-light'>Developed by <a href="https://lamdatelecombd.com/" target="_blank">Lamda Telecom</a></p>
+            <div className='w-full py-2'>
+                <p className='text-center text-xs font-light italic'>Developed by <Link href="https://lamdatelecombd.com/" target="_blank" className='underline'>Lamda Telecom</Link></p>
             </div>
         </footer>
     )
