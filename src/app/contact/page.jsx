@@ -122,17 +122,15 @@ const ContactInfo = () => (
                 title="Phone"
                 content={
                     <>
-                        +880-2-8189244<br />
-                        +880-2-8189321<br />
-                        +880-2-58155623 <br />
-                        +880-2-55012252
+                        +880-2-55013775<br />
+                        +880-2-55013773
                     </>
                 }
             />
             <ContactInfoItem
                 icon={<Mail size={24} />}
                 title="Email"
-                content="info@carbonholdings.com"
+                content="info@chl.com.bd"
             />
         </div>
     </div>
