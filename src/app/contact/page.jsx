@@ -4,10 +4,39 @@ import Head from 'next/head'
 import { useState } from 'react'
 import { MapPin, Phone, Mail, Send } from 'lucide-react'
 
+async function sendEmail(formData) {
+    try {
+        const response = await fetch('/api/send-email', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(formData),
+        });
+
+        if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        if (data.success) {
+            console.log('Email sent successfully!');
+            window.alert('We have received your message!');
+        } else {
+            console.error('Failed to send email:', data.message);
+            window.alert('Failed to send email. Please try again.');
+        }
+    } catch (error) {
+        console.error('Error:', error.message);
+        window.alert('An error occurred. Please try again.');
+    }
+}
+
+
+
 export default function Contact() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
+        subject: '',
         message: '',
     })
 
@@ -20,8 +49,11 @@ export default function Contact() {
         e.preventDefault()
         // Here you would typically send the form data to your server
         console.log('Form submitted:', formData)
+
+        sendEmail(formData);
+
         // Reset form after submission
-        setFormData({ name: '', email: '', message: '' })
+        setFormData({ name: '', email: '', subject: '', message: '' })
     }
 
     return (
@@ -48,7 +80,7 @@ const ContactForm = ({ formData, handleChange, handleSubmit }) => (
     <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded-lg p-8 animate-fadeInLeft">
         <h2 className="text-2xl font-semibold mb-6">Send us a message</h2>
         <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">Name</label>
+            <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
             <input
                 type="text"
                 id="name"
@@ -66,6 +98,18 @@ const ContactForm = ({ formData, handleChange, handleSubmit }) => (
                 id="email"
                 name="email"
                 value={formData.email}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                required
+            />
+        </div>
+        <div className="mb-4">
+            <label htmlFor="subject" className="block text-gray-700 text-sm font-bold mb-2">Subject</label>
+            <input
+                type="subject"
+                id="subject"
+                name="subject"
+                value={formData.subject}
                 onChange={handleChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
                 required
