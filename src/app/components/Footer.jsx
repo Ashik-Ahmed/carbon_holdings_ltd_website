@@ -1,0 +1,43 @@
+"use client"
+
+import { Facebook, Twitter, Linkedin } from 'lucide-react'
+import Link from 'next/link'
+
+const Footer = () => {
+    return (
+        <footer className="bg-secondary text-white">
+            <div className="container mx-auto px-6 py-8">
+                <div className="flex flex-wrap justify-between items-center">
+                    <div className="w-full md:w-1/3 text-center md:text-left">
+                        <h3 className="text-lg font-semibold mb-2">Carbon Holdings Ltd</h3>
+                        <p className="text-sm">Transforming energy for a sustainable future</p>
+                    </div>
+                    <div className="w-full md:w-1/3 text-center my-4 md:my-0">
+                        <p className="text-sm">&copy; {new Date().getFullYear()} Carbon Holdings Ltd. All rights reserved.</p>
+                    </div>
+                    <div className="w-full md:w-1/3 flex justify-center md:justify-end space-x-4">
+                        <SocialIcon icon={<Facebook size={20} />} href="#" />
+                        <SocialIcon icon={<Twitter size={20} />} href="#" />
+                        <SocialIcon icon={<Linkedin size={20} />} href="#" />
+                    </div>
+                </div>
+            </div>
+            <div className='w-full py-2'>
+                <p className='text-center text-xs font-light italic'>Developed by <Link href="https://lamdatelecombd.com/" target="_blank" className='underline'>Lamda Telecom</Link></p>
+            </div>
+        </footer>
+    )
+}
+
+const SocialIcon = ({ icon, href }) => (
+    <a
+        href={href}
+        className="text-white hover:text-gray-300 transition-colors duration-200"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        {icon}
+    </a>
+)
+
+export default Footer
