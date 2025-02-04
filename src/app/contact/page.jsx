@@ -40,6 +40,7 @@ export default function Contact() {
 
     const handleSubmit = async (e) => {
         setEmailLoading(true)
+        setFormStatus(null)
         e.preventDefault()
 
         const email = await sendEmail(formData)
