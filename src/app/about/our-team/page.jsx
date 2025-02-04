@@ -40,7 +40,7 @@ export default function OurTeam() {
             <div className='bg-white py-20'>
                 <h1 className='w-fit mx-auto text-4xl font-bold text-center text-gray-900 mb-12 border-b-4 border-primary'>Organogram</h1>
                 <div>
-                    <img
+                    <Image
                         src="/organogram2.png"
                         alt="Organogram"
                         width={800}

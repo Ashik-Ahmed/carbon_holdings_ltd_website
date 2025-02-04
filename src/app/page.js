@@ -163,7 +163,7 @@ const About = () => (
     <div className="container mx-auto px-6">
       <div className="flex flex-wrap items-center">
         <div className="w-full md:w-1/2 mb-8 md:mb-0">
-          <motion.img
+          <motion.Image
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
