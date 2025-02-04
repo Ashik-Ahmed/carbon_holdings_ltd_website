@@ -4,35 +4,10 @@ import Head from 'next/head'
 import { useState } from 'react'
 import { MapPin, Phone, Mail, Send } from 'lucide-react'
 
-async function sendEmail(formData) {
-    try {
-        const response = await fetch('/api/send-email', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(formData),
-        });
-
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const data = await response.json();
-        if (data.success) {
-            console.log('Email sent successfully!');
-            window.alert('We have received your message!');
-        } else {
-            console.error('Failed to send email:', data.message);
-            window.alert('Failed to send email. Please try again.');
-        }
-    } catch (error) {
-        console.error('Error:', error.message);
-        window.alert('An error occurred. Please try again.');
-    }
-}
-
-
-
 export default function Contact() {
+
+    const [formStatus, setFormStatus] = useState(null)
+    const [emailLoading, setEmailLoading] = useState(false)
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -40,20 +15,49 @@ export default function Contact() {
         message: '',
     })
 
-    const handleChange = (e) => {
-        const { name, value } = e.target
-        setFormData(prevState => ({ ...prevState, [name]: value }))
+
+    async function sendEmail(formData) {
+        try {
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData),
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            console.log('data:', data);
+            return data;
+
+        } catch (error) {
+            console.error('Error:', error.message);
+            return { error: error.message };
+        }
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
+        setEmailLoading(true)
         e.preventDefault()
-        // Here you would typically send the form data to your server
-        console.log('Form submitted:', formData)
 
-        sendEmail(formData);
+        const email = await sendEmail(formData)
 
-        // Reset form after submission
-        setFormData({ name: '', email: '', subject: '', message: '' })
+        if (email.success) {
+            setFormStatus('success')
+            setFormData({ name: '', email: '', subject: '', message: '' }) // Reset form state
+        } else {
+            setFormStatus('error')
+        }
+        setEmailLoading(false)
+    }
+
+    const handleChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+        })
     }
 
     return (
@@ -66,7 +70,76 @@ export default function Contact() {
                 <main className="container mx-auto px-6 py-12">
                     <h1 className="text-4xl font-bold text-center mb-12 animate-fadeInDown border-b-2 border-primary w-fit mx-auto">Contact Us</h1>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                        <ContactForm formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} />
+                        {/* <ContactForm formData={formData} handleChange={handleChange} handleSubmit={handleSubmit} /> */}
+                        <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded-lg p-8 animate-fadeInLeft">
+                            <h2 className="text-2xl font-semibold mb-6">Send us a message</h2>
+                            <div className="mb-4">
+                                <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                                    required
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                                    required
+                                />
+                            </div>
+                            <div className="mb-4">
+                                <label htmlFor="subject" className="block text-gray-700 text-sm font-bold mb-2">Subject</label>
+                                <input
+                                    type="subject"
+                                    id="subject"
+                                    name="subject"
+                                    value={formData.subject}
+                                    onChange={handleChange}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                                    required
+                                />
+                            </div>
+                            <div className="mb-6">
+                                <label htmlFor="message" className="block text-gray-700 text-sm font-bold mb-2">Message</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    value={formData.message}
+                                    onChange={handleChange}
+                                    rows={4}
+                                    className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                                    required
+                                ></textarea>
+                            </div>
+                            <button
+                                type="submit"
+                                className={`w-full bg-primary text-white font-bold py-2 px-4 rounded-md hover:bg-secondary transition-colors duration-300 flex items-center justify-center ${emailLoading ? 'opacity-50 cursor-not-allowed' : ''}`}
+                            >
+                                <Send size={18} className="mr-2" />
+                                Send Message
+                            </button>
+                            {formStatus === 'success' &&
+                                (
+                                    <p className="text-primary mt-4">We have received your message. Thanks for reaching out!</p>
+                                )
+                            }
+                            {
+                                formStatus === 'error' &&
+                                (
+                                    <p className="text-white bg-red-500 mt-4">Something went wrong. Please try again later.</p>
+                                )
+                            }
+                        </form>
                         <ContactInfo />
                     </div>
                 </main>
@@ -76,66 +149,9 @@ export default function Contact() {
     )
 }
 
-const ContactForm = ({ formData, handleChange, handleSubmit }) => (
-    <form onSubmit={handleSubmit} className="bg-white shadow-lg rounded-lg p-8 animate-fadeInLeft">
-        <h2 className="text-2xl font-semibold mb-6">Send us a message</h2>
-        <div className="mb-4">
-            <label htmlFor="name" className="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
-            <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                required
-            />
-        </div>
-        <div className="mb-4">
-            <label htmlFor="email" className="block text-gray-700 text-sm font-bold mb-2">Email</label>
-            <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                required
-            />
-        </div>
-        <div className="mb-4">
-            <label htmlFor="subject" className="block text-gray-700 text-sm font-bold mb-2">Subject</label>
-            <input
-                type="subject"
-                id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                required
-            />
-        </div>
-        <div className="mb-6">
-            <label htmlFor="message" className="block text-gray-700 text-sm font-bold mb-2">Message</label>
-            <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={4}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-                required
-            ></textarea>
-        </div>
-        <button
-            type="submit"
-            className="w-full bg-primary text-white font-bold py-2 px-4 rounded-md hover:bg-secondary transition-colors duration-300 flex items-center justify-center"
-        >
-            <Send size={18} className="mr-2" />
-            Send Message
-        </button>
-    </form>
-)
+// const ContactForm = ({ formData, handleChange, handleSubmit }) => (
+
+// )
 
 const ContactInfo = () => (
     <div className="bg-white shadow-lg rounded-lg p-8 animate-fadeInRight">

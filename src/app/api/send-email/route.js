@@ -22,7 +22,7 @@ export async function POST(req) {
             to: 'info@chl.com.bd', // Recipient email
             subject: subject, // Subject line
             text: message, // Plain text body
-            html: `<p>${message}</p>` // HTML body
+            html: `<pre>${message}</pre>` // HTML body
         };
 
         // Send the email
